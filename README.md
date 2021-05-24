@@ -399,6 +399,8 @@ following properties:
 
 The consent value object contains the following properties:
 
+| Parameter      | Type     | Description |
+|----------------|----------|-------------|
 | `accessTypeId` | `string` | The access type ID representing the available access types on Verify.<br>This must be one of the access types selected for the purpose. |
 | `attributeId` | `string` | The attribute ID on Verify. This must be configured as one of the<br>attributes for the purpose. This may be optional if no attributes are configured for the purpose. |
 | `attributeValue` | `string` | The attribute value for the attribute. This is typically used when<br>the user has more than one value for the attribute. This is optional. |
