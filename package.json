@@ -1,0 +1,29 @@
+{
+    "name": "verify-dpcm-sdk-js",
+    "version": "0.0.5",
+    "description": "",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "mocha",
+        "clean": "rm -r node_modules package-lock.json",
+        "docs": "rm -r docs 2>/dev/null; jsdoc -r lib -d docs -t node_modules/minami",
+        "check-env": "node -e 'console.log(process.env)' | grep npm"
+    },
+    "keywords": [],
+    "author": "Vivek Shankar <viv.shankar@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vivshankar/verify-dpcm-sdk-js"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.21.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.20.0",
+        "eslint-config-google": "^0.14.0",
+        "jsdoc": "^3.6.6",
+        "minami": "^1.2.3",
+        "mocha": "^8.3.0"
+    }
+}
