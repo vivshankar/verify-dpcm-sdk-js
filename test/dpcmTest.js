@@ -79,4 +79,27 @@ describe('DPCM', () => {
             })
         });
     })
+
+    describe('#storeConsents', () => {
+        it('store bad consents', () => {
+            let dpcmClient = new DPCM(config, context)
+            dpcmClient.storeConsents(auth, [ 
+                {
+                    "op": "add",
+                    "path": null,
+                    "value": {
+                        "purposeId": "marketing",
+                        "attributeId": "1",
+                        "accessTypeId": "default",
+                        "state": 1
+                    }
+                }
+            ]).then(result => {
+                assert.strictEqual(result.status, "done", `Result status is not done: ${result.status}`)
+            }).catch(err => {
+                console.log("Error=" + err);
+                assert.fail('getConsentMetadata failed')
+            })
+        });
+    })
 })

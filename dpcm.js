@@ -116,6 +116,70 @@ class DPCM {
         }
     }
 
+    /**
+    * Store consents for the user.
+    *
+    * Consents may only be created typically, except if the consent end time needs to
+    * be updated. Only 10 consent operations are allowed at a time.
+    * 
+    * A 400 HTTP status code is returned for requests that are malformed or generally 
+    * invalid. A 200 HTTP status code indicates a <code>success</code> response. A
+    * 207 HTTP status code indicates a <code>partial failure</code> response and requires
+    * the client to process the response.
+    * 
+    * @param {Array} consents The consent records being added or updated
+    * @param {string} consents.path The path of the consent resource. This is either
+    * null, when a consent is being added, or <code>/{consentId}/endTime</code>, when
+    * the end time of a consent is being updated.
+    * @param {string} consents.op The operation can be 'add' or 'replace'. 'replace' only
+    * applies to updating the end time of an existing consent record.
+    * @param {Object} consents.value If the operation is 'replace', this is the epoch time
+    * representing the end time, i.e. a long value. If the operation is 'add', this is an object.
+    * @param {string} consents.value.purposeId The purpose associated with the consent.
+    * @param {string} consents.value.attributeId The attribute associated with the consent.
+    * @param {string} consents.value.attributeValue The attribute value associated with the consent.
+    * @param {string} consents.value.accessTypeId The access type associated with the consent.
+    * @param {long} consents.value.startTime The start time for the consent. Defaults to current time.
+    * @param {long} consents.value.endTime The end time for the consent. Defaults to null.
+    * @param {ConsentType} consents.value.state The type of consent.
+    * @param {boolean} consents.value.isGlobal Indicates that the consent recorded is global for all 
+    * applications.
+    * 
+    * @return {Promise<Object>} The HTTP response body for a
+    * 200 or 207 HTTP status code.
+    * @throws {Error} An error response is received.
+    */
+     async storeConsents(auth, consents) {
+        const methodName = `${DPCM.name}:storeConsents(auth, consents)`
+        const service = new DPCMService(auth, this._config.tenantUrl, this._context)
+        try {
+            const r = await service.storeConsents(consents);
+            console.log(`[${methodName}]`, 'response:',
+                r);
+
+            return { status: 'done', response: r };
+        } catch (error) {
+            console.log(`[${methodName}]`, 'error:', error);
+            const jsonResp = { status: 'deny' };
+            if (error.response.data) {
+                jsonResp.detail = error.response.data;
+            }
+            return jsonResp;
+        }
+     }
+
+    /**
+    * Fetches user consents.
+    *
+    * If the access token used is not a user token, the <code>context.subjectId</code>
+    * must be provided.
+    * 
+    * A 400 HTTP status code is returned for requests that are malformed or generally 
+    * invalid. A 200 HTTP status code indicates a <code>success</code> response.
+    * 
+    * @return {Promise<Object>} The HTTP response body for a
+    * 200 HTTP status code.
+    */
     async getUserConsents(auth) {
         const methodName = `${DPCM.name}:getUserConsents(auth)`
         const service = new DPCMService(auth, this._config.tenantUrl, this._context)

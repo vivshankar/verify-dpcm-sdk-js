@@ -374,6 +374,99 @@ dpcmClient.getConsentMetadata(auth, purposes)
     });
 ```
 
+### Store user consents
+
+Store consents for the user. Consents may only be created typically, except if the consent 
+end time needs to be updated. Only 10 consent operations are allowed at a time.
+
+#### `storeConsents(auth, consents)`
+
+| Parameter   | Type     | Description |
+|-------------|----------|-------------|
+| `auth`   | `Object` | See [Auth Object](#auth-object).
+| `consents` | `Array` | Array of consent operations. See request.
+
+#### Request
+
+`consents` is an array of objects that represent consent operations. Each object contains the 
+following properties:
+
+| Parameter      | Type     | Description |
+|----------------|----------|-------------|
+| `op` | `string` | The operation type can be 'add' or 'replace'. |
+| `path` | `string` | The path to the consent resource. This is only required for `op=replace` |
+| `value` | | The value differs depending on the operation type. If `op=add`, this is the consent object.<br>If `op=replace`, this is the end time as time since epoch |
+
+The consent value object contains the following properties:
+
+| `accessTypeId` | `string` | The access type ID representing the available access types on Verify.<br>This must be one of the access types selected for the purpose. |
+| `attributeId` | `string` | The attribute ID on Verify. This must be configured as one of the<br>attributes for the purpose. This may be optional if no attributes are configured for the purpose. |
+| `attributeValue` | `string` | The attribute value for the attribute. This is typically used when<br>the user has more than one value for the attribute. This is optional. |
+| `startTime` | `int` | The start time in epoch format. This is optional and defaults to current time. |
+| `endTime` | `int` | The end time in epoch format. This is optional and defaults to no expiry. |
+| `state` | `int` | The consent state (see below for valid values). |
+| `isGlobal` | `boolean` | Indicates if the consent applies to all applications |
+
+The consent type can take in the following values:
+
+- 1 - Allow
+- 2 - Deny
+- 3 - Opt In
+- 4 - Opt Out
+- 5 - Transparent
+
+#### Responses
+
+* A `deny` response is received when the request fails.
+  ```javascript
+  {
+    "status": "deny"
+  }
+  ```
+
+* A `done` response contains the results of the operation. Not all consent operations may be completed successfully.
+  ```javascript
+  {
+    messageId: 'CSIBT0019E',
+    messageDescription: 'The requested operation succeeded partially. One or more operations did not succeed.',
+    results: [
+      {
+        op: 'add',
+        path: null,
+        value: [Object],
+        result: 'failure',
+        error: 'CSIBT0036E Attribute does not belong to the requested purpose.'
+      }
+    ]
+  }
+  ```
+
+#### Example Usage
+
+```javascript
+dpcmClient.storeUserConsents(auth, [ 
+    {
+        "op": "add",
+        "path": null,
+        "value": {
+            "purposeId": "marketing",
+            "attributeId": "1",
+            "accessTypeId": "default",
+            "state": 1
+        }
+    }
+  ]).then((result) => {
+      if (result.status == 'done') {
+        // process success
+      } else {
+        // process error
+      }
+    }).catch((error) => {
+      console.log(error);
+      // process error
+    });
+```
+
 ### Get user consents
 
 Get all user consents. If the access token used to authorize requests
