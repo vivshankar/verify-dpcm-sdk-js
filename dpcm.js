@@ -52,7 +52,7 @@ class DPCM {
             console.log(`[${methodName}]`, 'assessment:',
                 assessment);
 
-            return { status: 'done', assessment };
+            return { status: 'done', response: assessment };
         } catch (error) {
             console.log(`[${methodName}]`, 'error:', error);
             const jsonResp = { status: 'deny' };
@@ -92,7 +92,7 @@ class DPCM {
             console.log(`[${methodName}]`, 'metadata:',
                 metadata);
 
-            return { status: 'done', metadata };
+            return { status: 'done', response: metadata };
         } catch (error) {
             console.log(`[${methodName}]`, 'error:', error);
             const jsonResp = { status: 'deny' };
@@ -111,7 +111,7 @@ class DPCM {
             console.log(`[${methodName}]`, 'consents:',
                 consents);
 
-            return { status: 'done', consents };
+            return { status: 'done', response: consents };
         } catch (error) {
             console.log(`[${methodName}]`, 'error:', error);
             const jsonResp = { status: 'deny' };
