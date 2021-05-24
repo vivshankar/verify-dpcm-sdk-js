@@ -2,7 +2,20 @@ const ConfigurationError = require('./lib/errors/configurationError')
 const DPCMService = require('./lib/services/dpcm/dpcmService')
 
 class DPCM {
-    constructor(config, context) {
+    /**
+    * Create a new {@link DPCM} object.
+    * @param {Object} config The configuration of the system.
+    * @param {string} tenantUrl The Verify tenant hostname, including the protocol.
+    * @param {Object} context The context to include in the request.
+    * @param {string} context.subjectId The user/subject identifier that may be a
+    * Verify user identifier.
+    * @param {boolean} context.isExternalSubject Indicates if the subject is known
+    * to Verify.
+    * @param {string} context.ipAddress The IP address of the user agent. If this
+    * library is used in a backend system, this IP should be obtained from the 
+    * request headers that contain the actual user agent IP address.
+    */
+    constructor(config, context = {}) {
         if (!config.tenantUrl) {
             throw new ConfigurationError(
                 `Cannot find property 'tenantUrl' in configuration settings.`);
