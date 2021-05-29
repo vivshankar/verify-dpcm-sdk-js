@@ -7,7 +7,8 @@
         "testdebug": "DEBUG=verify:* mocha test/service/*.js test/privacy/*.js test/dpcm/*.js",
         "test": "mocha test/service/*.js test/privacy/*.js test/dpcm/*.js",
         "clean": "rm -r node_modules package-lock.json",
-        "docs": "rm -r docs 2>/dev/null; jsdoc -r lib -d docs -t node_modules/minami --verbose",
+        "olddocs": "rm -r docs 2>/dev/null; jsdoc -r lib -d docs -t node_modules/minami --verbose",
+        "docs": "rm -r docs 2>/dev/null; jsdoc -c ./.jsdoc.json --verbose",
         "check-env": "node -e 'console.log(process.env)' | grep npm"
     },
     "keywords": [],
