@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>errors/configurationError.js - Documentation</title>
+    <title>utils/jsdoc/globalTypeDefs.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">errors/configurationError.js</h1>
+    <h1 class="page-title">utils/jsdoc/globalTypeDefs.js</h1>
     
 
     
@@ -40,21 +40,12 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Indicate that a provided configuration does not contain the
- * required configuration properties.
- * @author Adam Dorogi-Kaposi &lt;adam.dorogi-kaposi@ibm.com>
+ * The standard error response type
+ * @typedef {Object} VerifyError
+ * @property {string} messageId Error code
+ * @property {string} messageDescription Localized description of the error
  */
-class ConfigurationError extends Error {
-    /**
-     * Create a {@link ConfigurationError} object with a custom error message.
-     * @param {string} message The error message.
-     */
-    constructor(message) {
-        super(message);
-    }
-}
-
-module.exports = ConfigurationError;</code></pre>
+</code></pre>
         </article>
     </section>
 

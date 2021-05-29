@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ConfigurationError.html">ConfigurationError</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html">Privacy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#assess">assess</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Privacy.html">Privacy</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ConfigurationError.html">ConfigurationError</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html">Privacy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#assess">assess</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Privacy.html">Privacy</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
 </nav>
 
 <div id="main">
@@ -45,11 +45,15 @@ const StringUtils = require('./utils/stringUtils')
 const debug = require('debug')('verify:privacy')
 
 /**
+ * Privacy module is the main module in the Privacy SDK
+ * @module Privacy
+ */
+
+/**
  * Class representing the Privacy SDK for IBM Security Verify. Used to 
  * perform privacy assessment for attributes being requested and metadata required to build consent
  * experiences.
  * 
- * @module Privacy
  * @author Vivek Shankar
  */
 class Privacy {
@@ -57,11 +61,11 @@ class Privacy {
     /**
      * Create a new {@link Privacy} object.
      * 
-     * @param {Object} config
+     * @param {Object} config Global configuration for the SDK
      * @param {string} config.tenantUrl The Verify tenant hostname, including the protocol.
-     * @param {Object} auth
+     * @param {Object} auth Auth object contains property values to authorize requests to Verify
      * @param {string} auth.accessToken The OAuth 2.0 token used to authorize requests
-     * @param {Object} context
+     * @param {Object} context Context object contains Privacy SDK specific context
      * @param {string} context.subjectId The user/subject identifier that may be a
      * Verify user identifier.
      * @param {boolean} context.isExternalSubject Indicates if the subject is known
@@ -85,38 +89,6 @@ class Privacy {
         this._auth = auth;
         this._context = context;
     }
-
-    /**
-     * The assessment object for a specific request item
-     * @typedef {Object} module:Privacy~Assessment
-     * @property {string} purposeId The purpose or EULA ID representing the privacy
-     * purpose or EULA configured on Verify.
-     * @property {string} accessTypeId The access type ID representing the 
-     * available access types on Verify. This is one of the access types configured
-     * for the purpose and optionally the attribute.
-     * @property {string} attributeId The attribute ID on Verify. This is one of the 
-     * attributes for the purpose.
-     * @property {Object} result The result object that contains the decision.
-     * @property {boolean} result.approved Indicates if the request has been approved
-     * @property {Object} result.reason If "approved" is false, the details of the denial
-     * @property {string} result.reason.messageId Verify error code
-     * @property {string} result.reason.messageDescription Localized description of the error
-     */
-
-    /**
-     * The assessment response object
-     * @typedef {Object} module:Privacy~WrappedAssessment
-     * @property {string} status The overall assessment status is computed based on the contents
-     * of the assessment.
-     * &lt;br>&lt;code>approved&lt;/code> - all items are approved
-     * &lt;br>&lt;code>consent&lt;/code> - some or all items require consent
-     * &lt;br>&lt;code>denied&lt;/code> - approval is denied for all items
-     * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
-     * @property {module:Privacy~Assessment} assessment The assessment details
-     * @property {Object} detail The error details if the status is "error"
-     * @property {string} detail.messageId Verify error code
-     * @property {string} detail.messageDescription Localized description of the error
-     */
 
     /**
      * Evaluate the attributes requested for approval.
@@ -198,88 +170,6 @@ class Privacy {
     }
 
     /**
-     * The consent metadata record
-     * @typedef {Object} module:Privacy~Consent
-     * @property {string} purposeId The purpose or EULA ID representing the privacy
-     * purpose or EULA configured on Verify.
-     * @property {string} accessTypeId The access type ID representing the 
-     * available access types on Verify. This is one of the access types configured
-     * for the purpose and optionally the attribute.
-     * @property {string} attributeId The attribute ID on Verify. This is one of the 
-     * attributes for the purpose.
-     * @property {string} attributeValue The attribute value for the attribute.
-     * This is typically used when the user has more than one value for the attribute
-     * and is consenting to a specific value.
-     * @property {number} startTime The time since Epoch that indicates when the consent
-     * becomes active.
-     * @property {number} endTime The time since Epoch that indicates when the consent
-     * elapses.
-     * @property {boolean} isGlobal Indicates if the consent applies to all applications
-     * @property {number} status This is the status of the consent and can be one of -
-     * &lt;br>&lt;code>1&lt;/code> - Active
-     * &lt;br>&lt;code>2&lt;/code> - Expired
-     * &lt;br>&lt;code>3&lt;/code> - Inactive
-     * &lt;br>&lt;code>8&lt;/code> - New consent required
-     * @property {number} state This is the consent type provided by the user and can be one of -
-     * &lt;br>&lt;code>1&lt;/code> - Allow: Usual consent that is not governed by any regulation
-     * &lt;br>&lt;code>2&lt;/code> - Deny: Usual consent that is not governed by any regulation
-     * &lt;br>&lt;code>3&lt;/code> - Opt in: Consent type required based on the assessment
-     * &lt;br>&lt;code>4&lt;/code> - Opt out: Consent type required based on the assessment
-     * &lt;br>&lt;code>5&lt;/code> - Transparent: No explicit user consent
-     * @property {string} geoIP This is the IP address where the user consents
-     * @property {Array} customAttributes This is a list of optional attributes. Object type
-     * within the array is &lt;code>{ "key": "somekey", "value": "somevalue" }&lt;/code> 
-     */
-
-    /**
-     * The consent metadata record
-     * @typedef {Object} module:Privacy~MetadataRecord
-     * @property {string} purposeId The purpose or EULA ID representing the privacy
-     * purpose or EULA configured on Verify.
-     * @property {string} purposeName The purpose or EULA name
-     * @property {string} accessTypeId The access type ID representing the 
-     * available access types on Verify. This is one of the access types configured
-     * for the purpose and optionally the attribute.
-     * @property {string} accessType The access type name
-     * @property {string} attributeId The attribute ID on Verify. This is one of the 
-     * attributes for the purpose.
-     * @property {string} attributeName The attribute name
-     * @property {number} defaultConsentDuration The default duration configured for the
-     * user consent. This applies if no explicit start and end time is provided.
-     * @property {boolean} assentUIDefault Indicates if the consent prompt should 
-     * default the selection to "accepted"
-     * @property {string} status The current status of consent. This can be one of -
-     * &lt;br>&lt;code>NONE&lt;/code> - No consent
-     * &lt;br>&lt;code>ACTIVE&lt;/code> - An active consent record exists. However, the consent may
-     * not translate to "yes".
-     * &lt;br>&lt;code>EXPIRED&lt;/code> - A user consent record exists but it is no longer valid. This
-     * may be due to a new privacy rule or a change in configuration or the consent has lapsed.
-     * @property {module:Privacy~Consent} consent The user consent record that may or may not be active.
-     */
-
-    /**
-     * The consent metadata object that contains records based on the request
-     * @typedef {Object} module:Privacy~Metadata
-     * @property {Array.&lt;module:Privacy~MetadataRecord>} eula The metadata records related
-     * to the EULA category
-     * @property {Array.&lt;module:Privacy~MetadataRecord>} default The metadata records related
-     * to the default purpose-aware attribute category
-     */
-
-    /**
-     * The consent metadata response object
-     * @typedef {Object} module:Privacy~WrappedMetadata
-     * @property {string} status The overall metadata status is computed based on whether
-     * the data was received or not.
-     * &lt;br>&lt;code>done&lt;/code> - the metadata is retrieved
-     * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
-     * @property {module:Privacy~Metadata} metadata The metadata for rendering a consent page
-     * @property {Object} detail The error details if the status is "error"
-     * @property {string} detail.messageId Verify error code
-     * @property {string} detail.messageDescription Localized description of the error
-     */
-
-    /**
      * Get consent metadata that can be used to build the consent page presented
      * to the data subject/user.
      *
@@ -359,7 +249,7 @@ module.exports = Privacy;</code></pre>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun May 30 2021 00:08:04 GMT+0800 (Singapore Standard Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun May 30 2021 01:31:59 GMT+0800 (Singapore Standard Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

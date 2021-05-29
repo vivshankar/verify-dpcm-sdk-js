@@ -4,7 +4,7 @@
         "dictionaries": ["jsdoc"]
     },
     "source": {
-        "include": ["lib/privacy.js", "lib/errors", "README.md"],
+        "include": ["lib/utils/jsdoc", "lib/privacy.js", "lib/errors", "README.md"],
         "excludePattern": "(node_modules/|docs)"
     },
     "plugins": [

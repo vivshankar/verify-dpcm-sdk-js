@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ConfigurationError.html">ConfigurationError</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html">Privacy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#assess">assess</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Privacy.html">Privacy</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ConfigurationError.html">ConfigurationError</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html">Privacy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#assess">assess</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Privacy.html">Privacy</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
 </nav>
 
 <div id="main">
@@ -51,9 +51,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Class representing the Privacy SDK for IBM Security Verify. Used to
-perform privacy assessment for attributes being requested and metadata required to build consent
-experiences.</p></div>
+            <div class="description"><p>Privacy module is the main module in the Privacy SDK</p></div>
         
 
         
@@ -84,13 +82,6 @@ experiences.</p></div>
 
     
 
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Vivek Shankar</li>
-        </ul>
-    </dd>
     
 
     
@@ -291,7 +282,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>Object</code></span>
+<span class="param-type"><code><a href="module-Privacy.html#~AssessmentDecision">module:Privacy~AssessmentDecision</a></code></span>
 
 
             
@@ -305,8 +296,91 @@ attributes for the purpose.</p></td>
         </tr>
 
         
-        <tr>
-                <h6>Properties</h6>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>Object</code></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</div>
+
+            
+                
+<div class="section-members">
+<h4 class="name" id="~AssessmentDecision">AssessmentDecision</h4>
+
+
+
+
+<div class="description">
+    <p>The assessment decision object for a specific request item</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
 
 <table class="props">
     <thead>
@@ -361,7 +435,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>Object</code></span>
+<span class="param-type"><code><a href="global.html#VerifyError">VerifyError</a></code></span>
 
 
             
@@ -374,90 +448,6 @@ attributes for the purpose.</p></td>
             <td class="description last"><p>If &quot;approved&quot; is false, the details of the denial</p></td>
         </tr>
 
-        
-        <tr>
-                <h6>Properties</h6>
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>messageId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Verify error code</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>messageDescription</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Localized description of the error</p></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-        </tr>
-        
-
-    
-    </tbody>
-</table>
-
-        </tr>
         
 
     
@@ -496,7 +486,7 @@ attributes for the purpose.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line48">line 48</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -892,7 +882,7 @@ within the array is <code>{ &quot;key&quot;: &quot;somekey&quot;, &quot;value&qu
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line159">line 159</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -1047,7 +1037,7 @@ to the default purpose-aware attribute category</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line219">line 219</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -1411,7 +1401,7 @@ may be due to a new privacy rule or a change in configuration or the consent has
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line193">line 193</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line68">line 68</a>
     </li></ul></dd>
     
 
@@ -1543,7 +1533,7 @@ of the assessment.
             <td class="type">
             
                 
-<span class="param-type"><code>Object</code></span>
+<span class="param-type"><code><a href="global.html#VerifyError">VerifyError</a></code></span>
 
 
             
@@ -1556,83 +1546,6 @@ of the assessment.
             <td class="description last"><p>The error details if the status is &quot;error&quot;</p></td>
         </tr>
 
-        
-        <tr>
-                <h6>Properties</h6>
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>messageId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Verify error code</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>messageDescription</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Localized description of the error</p></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-        </tr>
         
 
     
@@ -1671,7 +1584,7 @@ of the assessment.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line65">line 65</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line21">line 21</a>
     </li></ul></dd>
     
 
@@ -1801,7 +1714,7 @@ the data was received or not.
             <td class="type">
             
                 
-<span class="param-type"><code>Object</code></span>
+<span class="param-type"><code><a href="global.html#VerifyError">VerifyError</a></code></span>
 
 
             
@@ -1814,83 +1727,6 @@ the data was received or not.
             <td class="description last"><p>The error details if the status is &quot;error&quot;</p></td>
         </tr>
 
-        
-        <tr>
-                <h6>Properties</h6>
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>messageId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Verify error code</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>messageDescription</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Localized description of the error</p></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-        </tr>
         
 
     
@@ -1929,7 +1765,7 @@ the data was received or not.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line228">line 228</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line103">line 103</a>
     </li></ul></dd>
     
 
@@ -1974,7 +1810,7 @@ the data was received or not.
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun May 30 2021 00:08:05 GMT+0800 (Singapore Standard Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun May 30 2021 01:31:59 GMT+0800 (Singapore Standard Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
