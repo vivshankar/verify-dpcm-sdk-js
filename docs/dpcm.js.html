@@ -1,5 +1,47 @@
-const ConfigurationError = require('./lib/errors/configurationError')
-const DPCMService = require('./lib/services/dpcm/dpcmService')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>dpcm.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ConfigurationError.html">ConfigurationError</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="DPCM.html">DPCM</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCM.html#getConsentMetadata">getConsentMetadata</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCM.html#getUserConsents">getUserConsents</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCM.html#requestApproval">requestApproval</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCM.html#storeConsents">storeConsents</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="DPCMService.html">DPCMService</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCMService.html#get">get</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCMService.html#getConsentMetadata">getConsentMetadata</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCMService.html#patch">patch</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCMService.html#post">post</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCMService.html#requestApproval">requestApproval</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DPCMService.html#storeConsents">storeConsents</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Privacy.html">Privacy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Privacy.html#assess">assess</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Privacy.html#getConsentMetadata">getConsentMetadata</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Service.html">Service</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Service.html#get">get</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Service.html#patch">patch</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Service.html#post">post</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#maskObject">maskObject</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">dpcm.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const ConfigurationError = require('./errors/configurationError')
+const DPCMService = require('./services/dpcm/dpcmService')
+const debug = require('debug')('verify:dpcm')
 
 class DPCM {
     /**
@@ -38,7 +80,7 @@ class DPCM {
     * In the event that any of the data requests is not approved, the system
     * will respond with a HTTP status code of 207. A 400 HTTP status code 
     * is returned for requests that are malformed or generally invalid.
-    * A 200 HTTP status code indicates a <code>success</code> response.
+    * A 200 HTTP status code indicates a &lt;code>success&lt;/code> response.
     * 
     * @param {Array} duaRequest The data items that require approval for use
     * @param {string} duaRequest.purposeId The purpose ID representing the privacy
@@ -53,7 +95,7 @@ class DPCM {
     * This is typically used when the user has more than one value for the attribute.
     * This is optional.
     * 
-    * @return {Promise<Object>} The HTTP response body for a
+    * @return {Promise&lt;Object>} The HTTP response body for a
     * 200 or 207 HTTP status code.
     * @throws {Error} An error response is received.
     */
@@ -62,12 +104,12 @@ class DPCM {
         const service = new DPCMService(auth, this._config.tenantUrl, this._context)
         try {
             const assessment = await service.requestApproval(duaRequest);
-            console.log(`[${methodName}]`, 'assessment:',
+            debug(`[${methodName}]`, 'assessment:',
                 assessment);
 
             return { status: 'done', response: assessment };
         } catch (error) {
-            console.log(`[${methodName}]`, 'error:', error);
+            debug(`[${methodName}]`, 'error:', error);
             const jsonResp = { status: 'deny' };
             if (error.response.data) {
                 jsonResp.detail = error.response.data;
@@ -87,13 +129,13 @@ class DPCM {
     * consent may perhaps be for an older purpose.
     * 
     * A 400 HTTP status code is returned for requests that are malformed or generally 
-    * invalid. A 200 HTTP status code indicates a <code>success</code> response.
+    * invalid. A 200 HTTP status code indicates a &lt;code>success&lt;/code> response.
     * 
     * @param {Array} purposes The purposes for which the consent page is being built
     * @param {string} purposes.purposeId The purpose ID representing the privacy
     * purpose configured on Verify.
     * 
-    * @return {Promise<Object>} The HTTP response body for a
+    * @return {Promise&lt;Object>} The HTTP response body for a
     * 200 HTTP status code.
     * @throws {Error} An error response is received.
     */
@@ -102,12 +144,12 @@ class DPCM {
         const service = new DPCMService(auth, this._config.tenantUrl, this._context)
         try {
             const metadata = await service.getConsentMetadata(purposes);
-            console.log(`[${methodName}]`, 'metadata:',
+            debug(`[${methodName}]`, 'metadata:',
                 metadata);
 
             return { status: 'done', response: metadata };
         } catch (error) {
-            console.log(`[${methodName}]`, 'error:', error);
+            debug(`[${methodName}]`, 'error:', error);
             const jsonResp = { status: 'deny' };
             if (error.response.data) {
                 jsonResp.detail = error.response.data;
@@ -123,13 +165,13 @@ class DPCM {
     * be updated. Only 10 consent operations are allowed at a time.
     * 
     * A 400 HTTP status code is returned for requests that are malformed or generally 
-    * invalid. A 200 HTTP status code indicates a <code>success</code> response. A
-    * 207 HTTP status code indicates a <code>partial failure</code> response and requires
+    * invalid. A 200 HTTP status code indicates a &lt;code>success&lt;/code> response. A
+    * 207 HTTP status code indicates a &lt;code>partial failure&lt;/code> response and requires
     * the client to process the response.
     * 
     * @param {Array} consents The consent records being added or updated
     * @param {string} consents.path The path of the consent resource. This is either
-    * null, when a consent is being added, or <code>/{consentId}/endTime</code>, when
+    * null, when a consent is being added, or &lt;code>/{consentId}/endTime&lt;/code>, when
     * the end time of a consent is being updated.
     * @param {string} consents.op The operation can be 'add' or 'replace'. 'replace' only
     * applies to updating the end time of an existing consent record.
@@ -145,7 +187,7 @@ class DPCM {
     * @param {boolean} consents.value.isGlobal Indicates that the consent recorded is global for all 
     * applications.
     * 
-    * @return {Promise<Object>} The HTTP response body for a
+    * @return {Promise&lt;Object>} The HTTP response body for a
     * 200 or 207 HTTP status code.
     * @throws {Error} An error response is received.
     */
@@ -154,12 +196,12 @@ class DPCM {
         const service = new DPCMService(auth, this._config.tenantUrl, this._context)
         try {
             const r = await service.storeConsents(consents);
-            console.log(`[${methodName}]`, 'response:',
+            debug(`[${methodName}]`, 'response:',
                 r);
 
             return { status: 'done', response: r };
         } catch (error) {
-            console.log(`[${methodName}]`, 'error:', error);
+            debug(`[${methodName}]`, 'error:', error);
             const jsonResp = { status: 'deny' };
             if (error.response.data) {
                 jsonResp.detail = error.response.data;
@@ -171,13 +213,13 @@ class DPCM {
     /**
     * Fetches user consents.
     *
-    * If the access token used is not a user token, the <code>context.subjectId</code>
+    * If the access token used is not a user token, the &lt;code>context.subjectId&lt;/code>
     * must be provided.
     * 
     * A 400 HTTP status code is returned for requests that are malformed or generally 
-    * invalid. A 200 HTTP status code indicates a <code>success</code> response.
+    * invalid. A 200 HTTP status code indicates a &lt;code>success&lt;/code> response.
     * 
-    * @return {Promise<Object>} The HTTP response body for a
+    * @return {Promise&lt;Object>} The HTTP response body for a
     * 200 HTTP status code.
     */
     async getUserConsents(auth) {
@@ -185,12 +227,12 @@ class DPCM {
         const service = new DPCMService(auth, this._config.tenantUrl, this._context)
         try {
             const consents = await service.getUserConsents();
-            console.log(`[${methodName}]`, 'consents:',
+            debug(`[${methodName}]`, 'consents:',
                 consents);
 
             return { status: 'done', response: consents };
         } catch (error) {
-            console.log(`[${methodName}]`, 'error:', error);
+            debug(`[${methodName}]`, 'error:', error);
             const jsonResp = { status: 'deny' };
             if (error.response.data) {
                 jsonResp.detail = error.response.data;
@@ -200,4 +242,22 @@ class DPCM {
     }
 }
 
-module.exports = DPCM;
+module.exports = DPCM;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sat May 29 2021 18:46:36 GMT+0800 (Singapore Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -4,9 +4,10 @@
     "description": "",
     "main": "lib/index.js",
     "scripts": {
-        "test": "mocha",
+        "testdebug": "DEBUG=verify:* mocha test/service/*.js test/privacy/*.js test/dpcm/*.js",
+        "test": "mocha test/service/*.js test/privacy/*.js test/dpcm/*.js",
         "clean": "rm -r node_modules package-lock.json",
-        "docs": "rm -r docs 2>/dev/null; jsdoc -r lib -d docs -t node_modules/minami",
+        "docs": "rm -r docs 2>/dev/null; jsdoc -r lib -d docs -t node_modules/minami --verbose",
         "check-env": "node -e 'console.log(process.env)' | grep npm"
     },
     "keywords": [],
@@ -17,7 +18,9 @@
     },
     "license": "MIT",
     "dependencies": {
-        "axios": "^0.21.1"
+        "axios": "^0.21.1",
+        "debug": "^4.3.1",
+        "dotenv": "^10.0.0"
     },
     "devDependencies": {
         "eslint": "^7.20.0",
