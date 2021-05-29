@@ -19,62 +19,70 @@ describe('Privacy', () => {
     });
 
     describe('#assess', () => {
-        it('should not be approved', () => {
+        it('should not be approved', async () => {
             let client = new Privacy(config, auth, context);
-            client.assess([
-                {
-                    "purposeId": "marketing",
-                    "attributeId": "11", // mobile_number
-                    "accessTypeId": "default"
-                }
-            ]).then(result => {
+
+            try {
+                let result = await client.assess([
+                    {
+                        "purposeId": "marketing",
+                        "attributeId": "11", // mobile_number
+                        "accessTypeId": "default"
+                    }
+                ])
+                
                 debug(`result =\n${JSON.stringify(result)}`)
                 assert.strictEqual(result.status, "consent", `Result status is not done: ${result.status}`)
-                assert.ok(result.response[0].purposeId == "marketing", "Purpose ID in the response does not match")
-                assert.ok(!result.response[0].result[0].approved, "Request is approved. This is unexpected")
-            }).catch(err => {
-                debug("Error=" + err);
-                assert.fail('requestApproval failed')
-            })
+                assert.ok(result.assessment[0].purposeId == "marketing", "Purpose ID in the response does not match")
+                assert.ok(!result.assessment[0].result[0].approved, "Request is approved. This is unexpected")
+            } catch (error) {
+                assert.fail(`Error thrown:\n${error}`);
+            }
+            
         });
 
-        it('should be denied', () => {
+        it('should be denied', async () => {
             let client = new Privacy(config, auth, context);
-            client.assess([
-                {
-                    "purposeId": "98b56762-398b-4116-94b5-125b5ca0d831",
-                }
-            ]).then(result => {
+
+            try {
+                let result = await client.assess([
+                    {
+                        "purposeId": "98b56762-398b-4116-94b5-125b5ca0d831",
+                    }
+                ]);
                 debug(`result =\n${JSON.stringify(result)}`)
                 assert.strictEqual(result.status, "denied", `Result status is not done: ${result.status}`)
-                assert.ok(result.response[0].purposeId == "98b56762-398b-4116-94b5-125b5ca0d831", "Purpose ID in the response does not match")
-                assert.ok(!result.response[0].result[0].approved, "Request is approved. This is unexpected")
-            }).catch(err => {
-                debug("Error=" + err);
-                assert.fail('requestApproval failed')
-            })
+                assert.ok(result.assessment[0].purposeId == "98b56762-398b-4116-94b5-125b5ca0d831", 
+                    "Purpose ID in the response does not match")
+                assert.ok(!result.assessment[0].result[0].approved, "Request is approved. This is unexpected")
+            } catch (error) {
+                assert.fail(`Error thrown:\n${error}`);
+            }
         });
 
-        it('should ask for consent though one result is denied', () => {
+        it('should ask for consent though one result is denied', async () => {
             let client = new Privacy(config, auth, context);
-            client.assess([
-                {
-                    "purposeId": "marketing",
-                    "attributeId": "11", // mobile_number
-                    "accessTypeId": "default"
-                },
-                {
-                    "purposeId": "98b56762-398b-4116-94b5-125b5ca0d831",
-                }
-            ]).then(result => {
+            
+            try {
+                let result = await client.assess([
+                    {
+                        "purposeId": "marketing",
+                        "attributeId": "11", // mobile_number
+                        "accessTypeId": "default"
+                    },
+                    {
+                        "purposeId": "98b56762-398b-4116-94b5-125b5ca0d831",
+                    }
+                ]);
+                
                 debug(`result =\n${JSON.stringify(result)}`)
                 assert.strictEqual(result.status, "consent", `Result status is not done: ${result.status}`)
-                assert.ok(result.response[0].purposeId == "98b56762-398b-4116-94b5-125b5ca0d831", "Purpose ID in the response does not match")
-                assert.ok(!result.response[0].result[0].approved, "Request is approved. This is unexpected")
-            }).catch(err => {
-                debug("Error=" + err);
-                assert.fail('requestApproval failed')
-            })
+                assert.ok(result.assessment[0].purposeId == "marketing", 
+                    "Purpose ID in the response does not match")
+                assert.ok(!result.assessment[0].result[0].approved, "Request is approved. This is unexpected")
+            } catch (error) {
+                assert.fail(`Error thrown:\n${error}`);
+            }
         });
     })
 })
