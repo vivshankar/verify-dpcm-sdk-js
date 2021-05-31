@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Privacy - Documentation</title>
-
+    
+    
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -23,8 +25,9 @@
 
 <label for="nav-trigger" class="overlay"></label>
 
-<nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ConfigurationError.html">ConfigurationError</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html">Privacy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#assess">assess</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Privacy.html">Privacy</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="module-Privacy-Privacy.html">Privacy</a><ul class='methods'><li data-type='method'><a href="module-Privacy-Privacy.html#assess">assess</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getUserConsents">getUserConsents</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#storeConsents">storeConsents</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-Privacy.html">Privacy</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <div id="main">
@@ -48,18 +51,15 @@
 </header>
 
 <article>
-    <div class="container-overview">
     
-        
-            <div class="description"><p>Privacy module is the main module in the Privacy SDK</p></div>
-        
-
+        <div class="container-overview">
         
             
-<div class="section-method">
+                <div class="description usertext"><p>Privacy module is the main module in the Privacy SDK</p></div>
+            
 
-
-
+            
+                
 
 
 
@@ -67,34 +67,34 @@
 <dl class="details">
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line6">line 6</a>
     </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -126,10 +126,19 @@
 
 
 
-</div>
+
+
+
+
+
+
+
+
+
+            
         
+        </div>
     
-    </div>
 
     
 
@@ -142,6 +151,8 @@
             <dt><a href="module-Privacy-Privacy.html">Privacy</a></dt>
             <dd></dd>
         </dl>
+    
+    
     
 
      
@@ -157,17 +168,51 @@
 
         
                 
-<div class="section-members">
 <h4 class="name" id="~Assessment">Assessment</h4>
 
 
 
 
-<div class="description">
-    <p>The assessment object for a specific request item</p>
-</div>
 
+<dl class="details">
 
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -203,7 +248,7 @@
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -217,8 +262,6 @@
 purpose or EULA configured on Verify.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -229,7 +272,7 @@ purpose or EULA configured on Verify.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -244,8 +287,6 @@ available access types on Verify. This is one of the access types configured
 for the purpose and optionally the attribute.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -256,7 +297,7 @@ for the purpose and optionally the attribute.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -270,8 +311,6 @@ for the purpose and optionally the attribute.</p></td>
 attributes for the purpose.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -282,7 +321,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code><a href="module-Privacy.html#~AssessmentDecision">module:Privacy~AssessmentDecision</a></code></span>
+<span class="param-type"><a href="module-Privacy.html#~AssessmentDecision">module:Privacy~AssessmentDecision</a></span>
 
 
             
@@ -295,8 +334,6 @@ attributes for the purpose.</p></td>
             <td class="description last"><p>The result object that contains the decision.</p></td>
         </tr>
 
-        
-
     
     </tbody>
 </table>
@@ -304,45 +341,11 @@ attributes for the purpose.</p></td>
 
 
 
-<dl class="details">
 
-    
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line8">line 8</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+<div class="description usertext">
+    <p>The assessment object for a specific request item</p>
+</div>
 
 
 
@@ -350,7 +353,7 @@ attributes for the purpose.</p></td>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
+<span class="param-type">Object</span>
 
 
         </li>
@@ -360,21 +363,54 @@ attributes for the purpose.</p></td>
 
 
 
-</div>
 
             
                 
-<div class="section-members">
 <h4 class="name" id="~AssessmentDecision">AssessmentDecision</h4>
 
 
 
 
-<div class="description">
-    <p>The assessment decision object for a specific request item</p>
-</div>
 
+<dl class="details">
 
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -410,7 +446,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>boolean</code></span>
+<span class="param-type">boolean</span>
 
 
             
@@ -423,8 +459,6 @@ attributes for the purpose.</p></td>
             <td class="description last"><p>Indicates if the request has been approved</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -435,7 +469,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code><a href="global.html#VerifyError">VerifyError</a></code></span>
+<span class="param-type"><a href="global.html#VerifyError">VerifyError</a></span>
 
 
             
@@ -448,8 +482,6 @@ attributes for the purpose.</p></td>
             <td class="description last"><p>If &quot;approved&quot; is false, the details of the denial</p></td>
         </tr>
 
-        
-
     
     </tbody>
 </table>
@@ -457,45 +489,11 @@ attributes for the purpose.</p></td>
 
 
 
-<dl class="details">
 
-    
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line1">line 1</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+<div class="description usertext">
+    <p>The assessment decision object for a specific request item</p>
+</div>
 
 
 
@@ -503,7 +501,7 @@ attributes for the purpose.</p></td>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
+<span class="param-type">Object</span>
 
 
         </li>
@@ -513,21 +511,54 @@ attributes for the purpose.</p></td>
 
 
 
-</div>
 
             
                 
-<div class="section-members">
 <h4 class="name" id="~Consent">Consent</h4>
 
 
 
 
-<div class="description">
-    <p>The consent metadata record</p>
-</div>
 
+<dl class="details">
 
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -563,7 +594,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -577,8 +608,6 @@ attributes for the purpose.</p></td>
 purpose or EULA configured on Verify.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -589,7 +618,7 @@ purpose or EULA configured on Verify.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -604,8 +633,6 @@ available access types on Verify. This is one of the access types configured
 for the purpose and optionally the attribute.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -616,7 +643,7 @@ for the purpose and optionally the attribute.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -630,8 +657,6 @@ for the purpose and optionally the attribute.</p></td>
 attributes for the purpose.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -642,7 +667,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -657,8 +682,6 @@ This is typically used when the user has more than one value for the attribute
 and is consenting to a specific value.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -669,7 +692,7 @@ and is consenting to a specific value.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>number</code></span>
+<span class="param-type">number</span>
 
 
             
@@ -683,8 +706,6 @@ and is consenting to a specific value.</p></td>
 becomes active.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -695,7 +716,7 @@ becomes active.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>number</code></span>
+<span class="param-type">number</span>
 
 
             
@@ -709,8 +730,6 @@ becomes active.</p></td>
 elapses.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -721,7 +740,7 @@ elapses.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>boolean</code></span>
+<span class="param-type">boolean</span>
 
 
             
@@ -734,8 +753,6 @@ elapses.</p></td>
             <td class="description last"><p>Indicates if the consent applies to all applications</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -746,7 +763,7 @@ elapses.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>number</code></span>
+<span class="param-type">number</span>
 
 
             
@@ -763,8 +780,6 @@ elapses.</p></td>
 <br><code>8</code> - New consent required</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -775,7 +790,7 @@ elapses.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>number</code></span>
+<span class="param-type">number</span>
 
 
             
@@ -793,8 +808,6 @@ elapses.</p></td>
 <br><code>5</code> - Transparent: No explicit user consent</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -805,7 +818,7 @@ elapses.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -818,8 +831,6 @@ elapses.</p></td>
             <td class="description last"><p>This is the IP address where the user consents</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -830,7 +841,7 @@ elapses.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>Array</code></span>
+<span class="param-type">Array</span>
 
 
             
@@ -844,8 +855,6 @@ elapses.</p></td>
 within the array is <code>{ &quot;key&quot;: &quot;somekey&quot;, &quot;value&quot;: &quot;somevalue&quot; }</code></p></td>
         </tr>
 
-        
-
     
     </tbody>
 </table>
@@ -853,45 +862,11 @@ within the array is <code>{ &quot;key&quot;: &quot;somekey&quot;, &quot;value&qu
 
 
 
-<dl class="details">
 
-    
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line34">line 34</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+<div class="description usertext">
+    <p>The consent metadata record</p>
+</div>
 
 
 
@@ -899,7 +874,7 @@ within the array is <code>{ &quot;key&quot;: &quot;somekey&quot;, &quot;value&qu
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
+<span class="param-type">Object</span>
 
 
         </li>
@@ -909,21 +884,54 @@ within the array is <code>{ &quot;key&quot;: &quot;somekey&quot;, &quot;value&qu
 
 
 
-</div>
 
             
                 
-<div class="section-members">
 <h4 class="name" id="~Metadata">Metadata</h4>
 
 
 
 
-<div class="description">
-    <p>The consent metadata object that contains records based on the request</p>
-</div>
 
+<dl class="details">
 
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line94">line 94</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -959,7 +967,7 @@ within the array is <code>{ &quot;key&quot;: &quot;somekey&quot;, &quot;value&qu
             <td class="type">
             
                 
-<span class="param-type"><code>Array.&lt;<a href="module-Privacy.html#~MetadataRecord">module:Privacy~MetadataRecord</a>></code></span>
+<span class="param-type">Array.&lt;<a href="module-Privacy.html#~MetadataRecord">module:Privacy~MetadataRecord</a>></span>
 
 
             
@@ -973,8 +981,6 @@ within the array is <code>{ &quot;key&quot;: &quot;somekey&quot;, &quot;value&qu
 to the EULA category</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -985,7 +991,7 @@ to the EULA category</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>Array.&lt;<a href="module-Privacy.html#~MetadataRecord">module:Privacy~MetadataRecord</a>></code></span>
+<span class="param-type">Array.&lt;<a href="module-Privacy.html#~MetadataRecord">module:Privacy~MetadataRecord</a>></span>
 
 
             
@@ -999,8 +1005,6 @@ to the EULA category</p></td>
 to the default purpose-aware attribute category</p></td>
         </tr>
 
-        
-
     
     </tbody>
 </table>
@@ -1008,45 +1012,11 @@ to the default purpose-aware attribute category</p></td>
 
 
 
-<dl class="details">
 
-    
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line94">line 94</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+<div class="description usertext">
+    <p>The consent metadata object that contains records based on the request</p>
+</div>
 
 
 
@@ -1054,7 +1024,7 @@ to the default purpose-aware attribute category</p></td>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
+<span class="param-type">Object</span>
 
 
         </li>
@@ -1064,21 +1034,54 @@ to the default purpose-aware attribute category</p></td>
 
 
 
-</div>
 
             
                 
-<div class="section-members">
 <h4 class="name" id="~MetadataRecord">MetadataRecord</h4>
 
 
 
 
-<div class="description">
-    <p>The consent metadata record</p>
-</div>
 
+<dl class="details">
 
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -1114,7 +1117,7 @@ to the default purpose-aware attribute category</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1128,8 +1131,6 @@ to the default purpose-aware attribute category</p></td>
 purpose or EULA configured on Verify.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1140,7 +1141,7 @@ purpose or EULA configured on Verify.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1153,8 +1154,6 @@ purpose or EULA configured on Verify.</p></td>
             <td class="description last"><p>The purpose or EULA name</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1165,7 +1164,7 @@ purpose or EULA configured on Verify.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1180,8 +1179,6 @@ available access types on Verify. This is one of the access types configured
 for the purpose and optionally the attribute.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1192,7 +1189,7 @@ for the purpose and optionally the attribute.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1205,8 +1202,6 @@ for the purpose and optionally the attribute.</p></td>
             <td class="description last"><p>The access type name</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1217,7 +1212,7 @@ for the purpose and optionally the attribute.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1231,8 +1226,6 @@ for the purpose and optionally the attribute.</p></td>
 attributes for the purpose.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1243,7 +1236,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1256,8 +1249,6 @@ attributes for the purpose.</p></td>
             <td class="description last"><p>The attribute name</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1268,7 +1259,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>number</code></span>
+<span class="param-type">number</span>
 
 
             
@@ -1282,8 +1273,6 @@ attributes for the purpose.</p></td>
 user consent. This applies if no explicit start and end time is provided.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1294,7 +1283,7 @@ user consent. This applies if no explicit start and end time is provided.</p></t
             <td class="type">
             
                 
-<span class="param-type"><code>boolean</code></span>
+<span class="param-type">boolean</span>
 
 
             
@@ -1308,8 +1297,6 @@ user consent. This applies if no explicit start and end time is provided.</p></t
 default the selection to &quot;accepted&quot;</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1320,7 +1307,7 @@ default the selection to &quot;accepted&quot;</p></td>
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1338,8 +1325,6 @@ not translate to &quot;yes&quot;.
 may be due to a new privacy rule or a change in configuration or the consent has lapsed.</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1350,7 +1335,7 @@ may be due to a new privacy rule or a change in configuration or the consent has
             <td class="type">
             
                 
-<span class="param-type"><code><a href="module-Privacy.html#~Consent">module:Privacy~Consent</a></code></span>
+<span class="param-type"><a href="module-Privacy.html#~Consent">module:Privacy~Consent</a></span>
 
 
             
@@ -1363,8 +1348,6 @@ may be due to a new privacy rule or a change in configuration or the consent has
             <td class="description last"><p>The user consent record that may or may not be active.</p></td>
         </tr>
 
-        
-
     
     </tbody>
 </table>
@@ -1372,45 +1355,11 @@ may be due to a new privacy rule or a change in configuration or the consent has
 
 
 
-<dl class="details">
 
-    
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line68">line 68</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+<div class="description usertext">
+    <p>The consent metadata record</p>
+</div>
 
 
 
@@ -1418,7 +1367,7 @@ may be due to a new privacy rule or a change in configuration or the consent has
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
+<span class="param-type">Object</span>
 
 
         </li>
@@ -1428,21 +1377,54 @@ may be due to a new privacy rule or a change in configuration or the consent has
 
 
 
-</div>
 
             
                 
-<div class="section-members">
 <h4 class="name" id="~WrappedAssessment">WrappedAssessment</h4>
 
 
 
 
-<div class="description">
-    <p>The assessment response object</p>
-</div>
 
+<dl class="details">
 
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -1478,7 +1460,7 @@ may be due to a new privacy rule or a change in configuration or the consent has
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1496,8 +1478,6 @@ of the assessment.
 <br><code>error</code> - invalid request or system error</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1508,7 +1488,7 @@ of the assessment.
             <td class="type">
             
                 
-<span class="param-type"><code><a href="module-Privacy.html#~Assessment">module:Privacy~Assessment</a></code></span>
+<span class="param-type"><a href="module-Privacy.html#~Assessment">module:Privacy~Assessment</a></span>
 
 
             
@@ -1521,8 +1501,6 @@ of the assessment.
             <td class="description last"><p>The assessment details</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1533,7 +1511,7 @@ of the assessment.
             <td class="type">
             
                 
-<span class="param-type"><code><a href="global.html#VerifyError">VerifyError</a></code></span>
+<span class="param-type"><a href="global.html#VerifyError">VerifyError</a></span>
 
 
             
@@ -1546,8 +1524,6 @@ of the assessment.
             <td class="description last"><p>The error details if the status is &quot;error&quot;</p></td>
         </tr>
 
-        
-
     
     </tbody>
 </table>
@@ -1555,45 +1531,11 @@ of the assessment.
 
 
 
-<dl class="details">
 
-    
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line21">line 21</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+<div class="description usertext">
+    <p>The assessment response object</p>
+</div>
 
 
 
@@ -1601,7 +1543,7 @@ of the assessment.
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
+<span class="param-type">Object</span>
 
 
         </li>
@@ -1611,21 +1553,54 @@ of the assessment.
 
 
 
-</div>
 
             
                 
-<div class="section-members">
 <h4 class="name" id="~WrappedMetadata">WrappedMetadata</h4>
 
 
 
 
-<div class="description">
-    <p>The consent metadata response object</p>
-</div>
 
+<dl class="details">
 
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line103">line 103</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -1661,7 +1636,7 @@ of the assessment.
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1677,8 +1652,6 @@ the data was received or not.
 <br><code>error</code> - invalid request or system error</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1689,7 +1662,7 @@ the data was received or not.
             <td class="type">
             
                 
-<span class="param-type"><code><a href="module-Privacy.html#~Metadata">module:Privacy~Metadata</a></code></span>
+<span class="param-type"><a href="module-Privacy.html#~Metadata">module:Privacy~Metadata</a></span>
 
 
             
@@ -1702,8 +1675,6 @@ the data was received or not.
             <td class="description last"><p>The metadata for rendering a consent page</p></td>
         </tr>
 
-        
-
     
 
         <tr>
@@ -1714,7 +1685,7 @@ the data was received or not.
             <td class="type">
             
                 
-<span class="param-type"><code><a href="global.html#VerifyError">VerifyError</a></code></span>
+<span class="param-type"><a href="global.html#VerifyError">VerifyError</a></span>
 
 
             
@@ -1727,8 +1698,6 @@ the data was received or not.
             <td class="description last"><p>The error details if the status is &quot;error&quot;</p></td>
         </tr>
 
-        
-
     
     </tbody>
 </table>
@@ -1736,45 +1705,11 @@ the data was received or not.
 
 
 
-<dl class="details">
 
-    
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line103">line 103</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+<div class="description usertext">
+    <p>The consent metadata response object</p>
+</div>
 
 
 
@@ -1782,7 +1717,7 @@ the data was received or not.
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
+<span class="param-type">Object</span>
 
 
         </li>
@@ -1792,7 +1727,6 @@ the data was received or not.
 
 
 
-</div>
 
             
     
@@ -1805,15 +1739,21 @@ the data was received or not.
 
 
 
+    
+    
 </div>
 
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun May 30 2021 01:31:59 GMT+0800 (Singapore Standard Time) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Mon May 31 2021 16:51:14 GMT+0800 (Singapore Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
 <script src="scripts/linenumber.js"></script>
+
+
+
 </body>
 </html>

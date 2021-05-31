@@ -24,6 +24,7 @@
         "dotenv": "^10.0.0"
     },
     "devDependencies": {
+        "docdash": "^1.2.0",
         "eslint": "^7.20.0",
         "eslint-config-google": "^0.14.0",
         "jsdoc": "^3.6.6",
