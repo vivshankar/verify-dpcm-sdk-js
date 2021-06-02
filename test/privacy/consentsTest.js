@@ -27,9 +27,9 @@ describe('Privacy', () => {
                         "purposeId": "marketing",
                         "attributeId": "mobile_number",
                         "state": 3
-                    }
+                    },
                 ])
-                assert.strictEqual(result.status, "done", `Result status is not done: ${result.status}`);
+                assert.strictEqual(result.status, "success", `Result status is unexpected: ${result.status}`);
             } catch (error) {
                 assert.fail(`Error thrown:\n${error}`);
             }
@@ -40,7 +40,7 @@ describe('Privacy', () => {
 
             try {
                 let result = await client.getUserConsents();
-                assert.strictEqual(result.status, "done", `Result status is not done: ${result.status}`);
+                assert.strictEqual(result.status, "done", `Result status is unexpected: ${result.status}`);
             } catch (error) {
                 assert.fail(`Error thrown:\n${error}`);
             }
@@ -61,7 +61,7 @@ describe('Privacy', () => {
                     }
                 ])
                 
-                assert.strictEqual(result.status, "error", `Result status is not done: ${result.status}`)
+                assert.strictEqual(result.status, "error", `Result status is not unexpected: ${result.status}`)
             } catch (error) {
                 assert.fail(`Error thrown:\n${error}`);
             }
