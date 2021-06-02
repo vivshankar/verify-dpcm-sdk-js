@@ -43,6 +43,19 @@ doAssess = (req, res) => {
   // handle other cases
 }
 
+storeConsents = (req, res) => {
+  // assuming the request.body is a JSON array of 
+  // consent records that need to be stored
+  let r = await privacy.storeConsents(req.body);
+  if (r.status == "success") {
+    // done. Respond accordingly
+  } else if (r.status == "fail") {
+    // something didn't save. For example - an attempt was made to store a consent
+    // for an attribute that isn't linked to a purpose on Verify.
+    // Render an appropriate error code to the user.
+  }
+}
+
 ```
 
 ## Prerequisites
