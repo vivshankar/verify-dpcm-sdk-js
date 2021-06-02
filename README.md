@@ -27,7 +27,7 @@ const privacy = new Privacy(config, auth, context);
 let items = [
     {
         "purposeId": "marketing",
-        "attributeId": "11", // mobile_number
+        "attributeId": "mobile_number",
         "accessTypeId": "default"
     }
 ];
