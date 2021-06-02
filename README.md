@@ -77,10 +77,15 @@ $ npm install https://github.com/vivshankar/verify-dpcm-sdk-js
 
 ## Tests
 
-
-To run the test suite, first install the dependencies, then run `npm test`:
+To run the test suite, first install the dependencies, then run:
 
 ```bash
 $ npm install
 $ npm test
+```
+
+If you want to see debug logs, run:
+
+```js
+$ npm run testdebug
 ```
