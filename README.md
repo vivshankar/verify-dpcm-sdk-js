@@ -79,7 +79,7 @@ $ npm install https://github.com/vivshankar/verify-dpcm-sdk-js
 
 1. Install dependencies
 2. Copy `./test/dotenv` to `.env` in the same directory
-3. Generate an OAuth token using one of the user grant flows
+3. Generate an OAuth token using one of the user grant flows supported by Verify
 4. Run the test suite:
 
 ```bash
