@@ -26,13 +26,13 @@ describe('Privacy', () => {
                 let result = await client.assess([
                     {
                         "purposeId": "marketing",
-                        "attributeId": "11", // mobile_number
+                        "attributeId": "email",
                         "accessTypeId": "default"
                     }
                 ])
                 
                 debug(`result =\n${JSON.stringify(result)}`)
-                assert.strictEqual(result.status, "consent", `Result status is not done: ${result.status}`)
+                assert.strictEqual(result.status, "consent", `Result status is not consent: ${result.status}`)
                 assert.ok(result.assessment[0].purposeId == "marketing", "Purpose ID in the response does not match")
                 assert.ok(!result.assessment[0].result[0].approved, "Request is approved. This is unexpected")
             } catch (error) {
@@ -67,7 +67,7 @@ describe('Privacy', () => {
                 let result = await client.assess([
                     {
                         "purposeId": "marketing",
-                        "attributeId": "11", // mobile_number
+                        "attributeId": "email",
                         "accessTypeId": "default"
                     },
                     {

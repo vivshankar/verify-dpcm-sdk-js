@@ -17,14 +17,30 @@ describe('Privacy', () => {
         return done();
     });
 
-    describe('#getUserConsents', () => {
+    describe('#userConsents', () => {
+        it('create user consents', async () => {
+            let client = new Privacy(config, auth, context)
+
+            try {
+                let result = await client.storeConsents([
+                    {
+                        "purposeId": "marketing",
+                        "attributeId": "mobile_number",
+                        "state": 3
+                    }
+                ])
+                assert.strictEqual(result.status, "done", `Result status is not done: ${result.status}`);
+            } catch (error) {
+                assert.fail(`Error thrown:\n${error}`);
+            }
+        });
+
         it('get user consents', async () => {
             let client = new Privacy(config, auth, context)
 
             try {
                 let result = await client.getUserConsents();
-                
-                assert.strictEqual(result.status, "done", `Result status is not done: ${result.status}`)
+                assert.strictEqual(result.status, "done", `Result status is not done: ${result.status}`);
             } catch (error) {
                 assert.fail(`Error thrown:\n${error}`);
             }

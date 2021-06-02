@@ -77,13 +77,26 @@ $ npm install https://github.com/vivshankar/verify-dpcm-sdk-js
 
 ## Tests
 
-1. Install dependencies
-2. Copy `./test/dotenv` to `.env` in the same directory
-3. Generate an OAuth token using one of the user grant flows supported by Verify
-4. Run the test suite:
+Before running the tests, the Verify tenant must be configured with the following:
+
+* Purpose with ID `marketing`
+* Purpose `marketing` must be configured with two attributes - `mobile_number` and `email`
+* Purpose `marketing` must be configured with the `default` access type
+
+The test environment must be setup as below:
+
+1. In the directory where this Git repository is cloned, run:
+
+  ```
+  $ npm install
+  ```
+
+2. Copy `./test/dotenv` to `./test/.env`
+3. Use any OIDC application configured on the Verify tenant to generate an OAuth token. This would be associated with the user account used to login to the application.
+
+Now you can run the test by executing:
 
 ```bash
-$ npm install
 $ npm test
 ```
 
