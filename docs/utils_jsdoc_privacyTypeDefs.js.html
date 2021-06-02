@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="module-Privacy-Privacy.html">Privacy</a><ul class='methods'><li data-type='method'><a href="module-Privacy-Privacy.html#assess">assess</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getUserConsents">getUserConsents</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#storeConsents">storeConsents</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-Privacy.html">Privacy</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="module-Privacy-Privacy.html">Privacy</a><ul class='methods'><li data-type='method'><a href="module-Privacy-Privacy.html#assess">assess</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getUserConsents">getUserConsents</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-Privacy.html">Privacy</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <div id="main">
@@ -44,14 +44,14 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * The assessment decision object for a specific request item
- * @typedef {Object} module:Privacy~AssessmentDecision
+ * @typedef {Object} AssessmentDecision
  * @property {boolean} approved Indicates if the request has been approved
  * @property {VerifyError} reason If "approved" is false, the details of the denial
  */
 
 /**
  * The assessment object for a specific request item
- * @typedef {Object} module:Privacy~Assessment
+ * @typedef {Object} Assessment
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
  * @property {string} accessTypeId The access type ID representing the 
@@ -59,25 +59,25 @@
  * for the purpose and optionally the attribute.
  * @property {string} attributeId The attribute ID on Verify. This is one of the 
  * attributes for the purpose.
- * @property {module:Privacy~AssessmentDecision} result The result object that contains the decision.
+ * @property {AssessmentDecision} result The result object that contains the decision.
  */
 
 /**
  * The assessment response object
- * @typedef {Object} module:Privacy~WrappedAssessment
+ * @typedef {Object} WrappedAssessment
  * @property {string} status The overall assessment status is computed based on the contents
  * of the assessment.
  * &lt;br>&lt;code>approved&lt;/code> - all items are approved
  * &lt;br>&lt;code>consent&lt;/code> - some or all items require consent
  * &lt;br>&lt;code>denied&lt;/code> - approval is denied for all items
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
- * @property {module:Privacy~Assessment} assessment The assessment details
+ * @property {Assessment} assessment The assessment details
  * @property {VerifyError} detail The error details if the status is "error"
  */
 
 /**
  * The consent metadata record
- * @typedef {Object} module:Privacy~Consent
+ * @typedef {Object} Consent
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
  * @property {string} accessTypeId The access type ID representing the 
@@ -111,7 +111,7 @@
 
 /**
  * The consent metadata record
- * @typedef {Object} module:Privacy~MetadataRecord
+ * @typedef {Object} MetadataRecord
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
  * @property {string} purposeName The purpose or EULA name
@@ -132,26 +132,26 @@
  * not translate to "yes".
  * &lt;br>&lt;code>EXPIRED&lt;/code> - A user consent record exists but it is no longer valid. This
  * may be due to a new privacy rule or a change in configuration or the consent has lapsed.
- * @property {module:Privacy~Consent} consent The user consent record that may or may not be active.
+ * @property {Consent} consent The user consent record that may or may not be active.
  */
 
 /**
  * The consent metadata object that contains records based on the request
- * @typedef {Object} module:Privacy~Metadata
- * @property {Array.&lt;module:Privacy~MetadataRecord>} eula The metadata records related
+ * @typedef {Object} Metadata
+ * @property {Array.&lt;MetadataRecord>} eula The metadata records related
  * to the EULA category
- * @property {Array.&lt;module:Privacy~MetadataRecord>} default The metadata records related
+ * @property {Array.&lt;MetadataRecord>} default The metadata records related
  * to the default purpose-aware attribute category
  */
 
 /**
  * The consent metadata response object
- * @typedef {Object} module:Privacy~WrappedMetadata
+ * @typedef {Object} WrappedMetadata
  * @property {string} status The overall metadata status is computed based on whether
  * the data was received or not.
  * &lt;br>&lt;code>done&lt;/code> - the metadata is retrieved
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
- * @property {module:Privacy~Metadata} metadata The metadata for rendering a consent page
+ * @property {Metadata} metadata The metadata for rendering a consent page
  * @property {VerifyError} detail The error details if the status is "error"
  */</code></pre>
         </article>
@@ -167,7 +167,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Mon May 31 2021 16:51:14 GMT+0800 (Singapore Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Jun 02 2021 13:35:28 GMT+0800 (Singapore Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="module-Privacy-Privacy.html">Privacy</a><ul class='methods'><li data-type='method'><a href="module-Privacy-Privacy.html#assess">assess</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getUserConsents">getUserConsents</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#storeConsents">storeConsents</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-Privacy.html">Privacy</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="module-Privacy-Privacy.html">Privacy</a><ul class='methods'><li data-type='method'><a href="module-Privacy-Privacy.html#assess">assess</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getConsentMetadata">getConsentMetadata</a></li><li data-type='method'><a href="module-Privacy-Privacy.html#getUserConsents">getUserConsents</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-Privacy.html">Privacy</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <div id="main">
@@ -122,6 +122,1218 @@
         <h3 class="subsection-title">Type Definitions</h3>
 
         
+                
+<h4 class="name" id="Assessment">Assessment</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>purposeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The purpose or EULA ID representing the privacy
+purpose or EULA configured on Verify.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accessTypeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The access type ID representing the
+available access types on Verify. This is one of the access types configured
+for the purpose and optionally the attribute.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attributeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The attribute ID on Verify. This is one of the
+attributes for the purpose.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>result</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#AssessmentDecision">AssessmentDecision</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The result object that contains the decision.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The assessment object for a specific request item</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="AssessmentDecision">AssessmentDecision</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>approved</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Indicates if the request has been approved</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reason</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#VerifyError">VerifyError</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>If &quot;approved&quot; is false, the details of the denial</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The assessment decision object for a specific request item</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Consent">Consent</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>purposeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The purpose or EULA ID representing the privacy
+purpose or EULA configured on Verify.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accessTypeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The access type ID representing the
+available access types on Verify. This is one of the access types configured
+for the purpose and optionally the attribute.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attributeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The attribute ID on Verify. This is one of the
+attributes for the purpose.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attributeValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The attribute value for the attribute.
+This is typically used when the user has more than one value for the attribute
+and is consenting to a specific value.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The time since Epoch that indicates when the consent
+becomes active.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The time since Epoch that indicates when the consent
+elapses.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isGlobal</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Indicates if the consent applies to all applications</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>This is the status of the consent and can be one of -
+<br><code>1</code> - Active
+<br><code>2</code> - Expired
+<br><code>3</code> - Inactive
+<br><code>8</code> - New consent required</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>This is the consent type provided by the user and can be one of -
+<br><code>1</code> - Allow: Usual consent that is not governed by any regulation
+<br><code>2</code> - Deny: Usual consent that is not governed by any regulation
+<br><code>3</code> - Opt in: Consent type required based on the assessment
+<br><code>4</code> - Opt out: Consent type required based on the assessment
+<br><code>5</code> - Transparent: No explicit user consent</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>geoIP</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>This is the IP address where the user consents</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>customAttributes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>This is a list of optional attributes. Object type
+within the array is <code>{ &quot;key&quot;: &quot;somekey&quot;, &quot;value&quot;: &quot;somevalue&quot; }</code></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The consent metadata record</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Metadata">Metadata</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line94">line 94</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eula</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="global.html#MetadataRecord">MetadataRecord</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The metadata records related
+to the EULA category</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>default</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="global.html#MetadataRecord">MetadataRecord</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The metadata records related
+to the default purpose-aware attribute category</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The consent metadata object that contains records based on the request</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="MetadataRecord">MetadataRecord</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>purposeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The purpose or EULA ID representing the privacy
+purpose or EULA configured on Verify.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>purposeName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The purpose or EULA name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accessTypeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The access type ID representing the
+available access types on Verify. This is one of the access types configured
+for the purpose and optionally the attribute.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accessType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The access type name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attributeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The attribute ID on Verify. This is one of the
+attributes for the purpose.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attributeName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The attribute name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>defaultConsentDuration</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The default duration configured for the
+user consent. This applies if no explicit start and end time is provided.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>assentUIDefault</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Indicates if the consent prompt should
+default the selection to &quot;accepted&quot;</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The current status of consent. This can be one of -
+<br><code>NONE</code> - No consent
+<br><code>ACTIVE</code> - An active consent record exists. However, the consent may
+not translate to &quot;yes&quot;.
+<br><code>EXPIRED</code> - A user consent record exists but it is no longer valid. This
+may be due to a new privacy rule or a change in configuration or the consent has lapsed.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Consent">Consent</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The user consent record that may or may not be active.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The consent metadata record</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
                 
 <h4 class="name" id="VerifyError">VerifyError</h4>
 
@@ -270,6 +1482,356 @@
 
 
             
+                
+<h4 class="name" id="WrappedAssessment">WrappedAssessment</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The overall assessment status is computed based on the contents
+of the assessment.
+<br><code>approved</code> - all items are approved
+<br><code>consent</code> - some or all items require consent
+<br><code>denied</code> - approval is denied for all items
+<br><code>error</code> - invalid request or system error</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>assessment</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Assessment">Assessment</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The assessment details</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>detail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#VerifyError">VerifyError</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The error details if the status is &quot;error&quot;</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The assessment response object</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="WrappedMetadata">WrappedMetadata</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line103">line 103</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The overall metadata status is computed based on whether
+the data was received or not.
+<br><code>done</code> - the metadata is retrieved
+<br><code>error</code> - invalid request or system error</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>metadata</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Metadata">Metadata</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The metadata for rendering a consent page</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>detail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#VerifyError">VerifyError</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The error details if the status is &quot;error&quot;</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The consent metadata response object</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
     
 
     
@@ -287,7 +1849,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Mon May 31 2021 16:51:14 GMT+0800 (Singapore Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Jun 02 2021 13:35:28 GMT+0800 (Singapore Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

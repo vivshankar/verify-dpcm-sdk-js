@@ -12,7 +12,7 @@ on this Github repository for feature requests and bugs.
 ---
 
 ```js
-const Privacy = require('verify-dpcm-sdk-js').Privacy;
+const Privacy = require('verify-dpcm-sdk-js');
 
 // tenant information and other global config
 const config = { tenantUrl: "https://abc.verify.ibm.com" };
