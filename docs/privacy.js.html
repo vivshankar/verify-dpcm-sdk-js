@@ -189,7 +189,12 @@ class Privacy {
           continue;
         }
 
-        if (ia.result &amp;&amp; ia.result[0].reason.messageId === 'CSIBT0033I') {
+        if (ia.result &amp;&amp;
+            (ia.result[0].reason.messageId === 'CSIBT0033I' ||
+             ia.result[0].reason.messageId === 'CSIBT0044I' ||
+             ia.result[0].reason.messageId === 'CSIBT0034I' ||
+             ia.result[0].reason.messageId === 'CSIBT0052I' ||
+             ia.result[0].reason.messageId === 'CSIBT0065I')) {
           // at least one item requires consent
           status = 'consent';
           continue;
@@ -269,7 +274,7 @@ class Privacy {
         }
 
         itemNameSet.add(item.purposeId + '/' +
-            StringUtils.getOrDefault(item, 'attribute', '') +
+            StringUtils.getOrDefault(item, 'attributeId', '') +
             '.' + StringUtils.getOrDefault(item, 'accessTypeId', ''));
       }
 
@@ -339,7 +344,7 @@ class Privacy {
     *
     * @return {Promise&lt;WrappedStoreUserConsents>} Consent operation response
     * @example
-    * let r = await client.storeUserConsents([
+    * let r = await client.storeConsents([
     *   {
     *     "purposeId": "marketing",
     *     "attributeId": "mobile_number",
