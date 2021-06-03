@@ -51,8 +51,8 @@
         </h2>
         
             <div class="class-description usertext"><p>Class representing the Privacy SDK for IBM Security Verify. Used to
-perform privacy assessment for attributes being requested and metadata required to build consent
-experiences.</p></div>
+perform privacy assessment for attributes being requested and metadata
+required to build consent experiences.</p></div>
         
     
 </header>
@@ -234,7 +234,8 @@ const client = new Privacy({
 
             
 
-            <td class="description last"><p>The Verify tenant hostname, including the protocol.</p></td>
+            <td class="description last"><p>The Verify tenant hostname, including
+the protocol.</p></td>
         </tr>
 
     
@@ -264,7 +265,8 @@ const client = new Privacy({
 
             
 
-            <td class="description last"><p>Auth object contains property values to authorize requests to Verify</p>
+            <td class="description last"><p>Auth object contains property values to authorize
+requests to Verify</p>
                 <h6>Properties</h6>
                 
 
@@ -306,9 +308,10 @@ const client = new Privacy({
 
             
 
-            <td class="description last"><p>The OAuth 2.0 token used to authorize requests. If the access token
-is generated using a privileged API client (as opposed to one generated on a user authentication flow),
-the <code>context.subjectId</code> is required.</p></td>
+            <td class="description last"><p>The OAuth 2.0 token used to authorize
+requests. If the access token is generated using a privileged API client
+(as opposed to one generated on a user authentication flow), the
+<code>context.subjectId</code> is required.</p></td>
         </tr>
 
     
@@ -338,7 +341,8 @@ the <code>context.subjectId</code> is required.</p></td>
 
             
 
-            <td class="description last"><p>Context object contains Privacy SDK specific context</p>
+            <td class="description last"><p>Context object contains Privacy SDK specific
+context</p>
                 <h6>Properties</h6>
                 
 
@@ -380,8 +384,8 @@ the <code>context.subjectId</code> is required.</p></td>
 
             
 
-            <td class="description last"><p>The user/subject identifier that may be a
-Verify user identifier.</p></td>
+            <td class="description last"><p>The user/subject identifier that may be
+a Verify user identifier.</p></td>
         </tr>
 
     
@@ -404,8 +408,8 @@ Verify user identifier.</p></td>
 
             
 
-            <td class="description last"><p>Indicates if the subject is known
-to Verify.</p></td>
+            <td class="description last"><p>Indicates if the subject is
+known to Verify.</p></td>
         </tr>
 
     
@@ -500,7 +504,7 @@ request headers that contain the actual user agent IP address.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line113">line 113</a>
+        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line116">line 116</a>
     </li></ul></dd>
     
 
@@ -717,8 +721,8 @@ selected for the purpose.</p></td>
             
 
             <td class="description last"><p>The attribute ID on Verify. This must be
-configured as one of the attributes for the purpose. This may be optional if
-no attributes are configured for the purpose.</p></td>
+configured as one of the attributes for the purpose. This may be optional
+if no attributes are configured for the purpose.</p></td>
         </tr>
 
     
@@ -742,8 +746,8 @@ no attributes are configured for the purpose.</p></td>
             
 
             <td class="description last"><p>The attribute value for the attribute.
-This is typically used when the user has more than one value for the attribute.
-This is optional.</p></td>
+This is typically used when the user has more than one value for the
+attribute. This is optional.</p></td>
         </tr>
 
     
@@ -815,7 +819,7 @@ and additional details</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line205">line 205</a>
+        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line212">line 212</a>
     </li></ul></dd>
     
 
@@ -1024,8 +1028,8 @@ defaulted to 'default'. Wildcards are not allowed.</p></td>
             
 
             <td class="description last"><p>The attribute ID on Verify. This must be
-configured as one of the attributes for the purpose. This may be optional if
-no attributes are configured for the purpose. Wildcards are not allowed.</p></td>
+configured as one of the attributes for the purpose. This may be optional
+if no attributes are configured for the purpose. Wildcards are not allowed.</p></td>
         </tr>
 
     
@@ -1097,7 +1101,7 @@ and any consent metadata</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line255">line 255</a>
+        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line265">line 265</a>
     </li></ul></dd>
     
 
@@ -1198,7 +1202,7 @@ if (r.status == "done") {
 
     
 
-    <h4 class="name" id="storeConsents"><span class="type-signature">(async) </span>storeConsents<span class="signature">(consents)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
+    <h4 class="name" id="storeConsents"><span class="type-signature">(async) </span>storeConsents<span class="signature">(consents)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#WrappedStoreUserConsents">WrappedStoreUserConsents</a>>}</span></h4>
 
     
 
@@ -1210,7 +1214,7 @@ if (r.status == "done") {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line299">line 299</a>
+        <a href="privacy.js.html">privacy.js</a>, <a href="privacy.js.html#line312">line 312</a>
     </li></ul></dd>
     
 
@@ -1251,8 +1255,9 @@ if (r.status == "done") {
 
 <div class="description usertext">
     <p>Store consents for the user.
-<br><br>Consents may only be created typically, except if the consent end time needs to
-be updated. Only 10 consent operations are allowed at a time.</p>
+<br><br>Consents may only be created typically, except if the consent
+end time needs to be updated. Only 10 consent operations are allowed
+at a time.</p>
 </div>
 
 
@@ -1323,7 +1328,8 @@ if (r.status == "success") {
 
             
 
-            <td class="description last"><p>The full consent records that need to be created or updated</p></td>
+            <td class="description last"><p>The full consent records that need to be
+created or updated</p></td>
         </tr>
 
     
@@ -1360,7 +1366,7 @@ if (r.status == "success") {
     </dt>
     <dd>
         
-<span class="param-type">Promise.&lt;Object></span>
+<span class="param-type">Promise.&lt;<a href="global.html#WrappedStoreUserConsents">WrappedStoreUserConsents</a>></span>
 
 
     </dd>
@@ -1390,7 +1396,7 @@ if (r.status == "success") {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Jun 02 2021 20:54:30 GMT+0800 (Singapore Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Jun 03 2021 14:19:59 GMT+0800 (Singapore Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
