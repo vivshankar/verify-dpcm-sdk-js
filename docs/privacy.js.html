@@ -162,7 +162,7 @@ class Privacy {
     const service = new DPCMService(
         this._auth, this._config.tenantUrl, this._context);
     try {
-      let assessment = await service.requestApproval(items);
+      const assessment = await service.requestApproval(items);
       debug(`[${methodName}]`, 'assessment:',
           JSON.stringify(assessment));
 
@@ -180,7 +180,7 @@ class Privacy {
       }
 
       let status = null;
-      for (let ia of assessment) {
+      for (const ia of assessment) {
         ia.requiresConsent = false;
         if (!ia.result) {
           continue;
@@ -193,11 +193,12 @@ class Privacy {
             status = 'multistatus';
           }
         } else {
-          if (// User has already opted out or denied consent.
-              // Rule decision is deny.
-              // The input application {{appID}} to purpose mapping {{purpose}} is not valid.
-              !['CSIBT0040I', 'CSIBT0041I', 'CSIBT0060I', 'CSIBT0016E']
-                  .includes(ia.result[0].reason.messageId)) {
+          // User has already opted out or denied consent.
+          // Rule decision is deny.
+          // The input application {{appID}} to purpose mapping {{purpose}}
+          // is not valid.
+          if (!['CSIBT0040I', 'CSIBT0041I', 'CSIBT0060I', 'CSIBT0016E']
+              .includes(ia.result[0].reason.messageId)) {
             // at least one item requires consent
             status = 'consent';
             ia.requiresConsent = true;
