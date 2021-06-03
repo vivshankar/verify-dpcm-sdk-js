@@ -37,8 +37,8 @@ doAssess = (req, res) => {
   let decision = await privacy.assess(items);
   if (decision.status == "consent") {
     // metadata used to render a user consent page
-    let metadata = await privacy.getConsentMetadata(items);
-    res.render('consent', { metadata: metadata.response });
+    let r = await privacy.getConsentMetadata(items);
+    res.render('consent', { metadata: r.metadata });
   }
   // handle other cases
 }
