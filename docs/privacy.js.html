@@ -162,7 +162,7 @@ class Privacy {
     const service = new DPCMService(
         this._auth, this._config.tenantUrl, this._context);
     try {
-      const assessment = await service.requestApproval(items);
+      let assessment = await service.requestApproval(items);
       debug(`[${methodName}]`, 'assessment:',
           JSON.stringify(assessment));
 
@@ -180,7 +180,8 @@ class Privacy {
       }
 
       let status = null;
-      for (const ia of assessment) {
+      for (let ia of assessment) {
+        ia.requiresConsent = false;
         if (ia.result &amp;&amp; ia.result[0].approved) {
           if (status == null) {
             status = 'approved';
@@ -190,13 +191,14 @@ class Privacy {
         }
 
         if (ia.result &amp;&amp;
-            (ia.result[0].reason.messageId === 'CSIBT0033I' ||
-             ia.result[0].reason.messageId === 'CSIBT0044I' ||
-             ia.result[0].reason.messageId === 'CSIBT0034I' ||
-             ia.result[0].reason.messageId === 'CSIBT0052I' ||
-             ia.result[0].reason.messageId === 'CSIBT0065I')) {
+            !ia.result[0].approved &amp;&amp;
+            // User has already opted out or denied consent.
+            // Rule decision is deny.
+            !['CSIBT0040I', 'CSIBT0041I', 'CSIBT0060I']
+                .includes(ia.result[0].reason.messageId)) {
           // at least one item requires consent
           status = 'consent';
+          ia.requiresConsent = true;
           continue;
         }
       }
