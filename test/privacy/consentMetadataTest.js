@@ -25,7 +25,7 @@ describe('Privacy', () => {
                 let result = await client.getConsentMetadata([
                     {
                         "purposeId": "marketing",
-                        "attributeId": "11", // mobile_number
+                        "attributeId": "mobile_number", // mobile_number
                         "accessTypeId": "default"
                     }
                 ]);
@@ -43,7 +43,7 @@ describe('Privacy', () => {
                 let result = await client.getConsentMetadata([
                     {
                         "purposeId": "marketing",
-                        "attributeId": "11", // mobile_number
+                        "attributeId": "mobile_number", // mobile_number
                         "accessTypeId": "default"
                     },
                     {
