@@ -86,7 +86,7 @@ $ npm install https://github.com/vivshankar/verify-dpcm-sdk-js
 ## Documentation
 
 * [Library documentation](https://vivshankar.github.io/verify-dpcm-sdk-js/)
-* Usage examples
+* [Usage examples](https://github.com/vivshankar/verify-privacy-examples)
 
 ## Tests
 
