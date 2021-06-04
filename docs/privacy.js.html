@@ -60,6 +60,32 @@ const debug = require('debug')('verify:privacy');
  * @author Vivek Shankar
  */
 class Privacy {
+
+  /**
+   * Enumeration of different possible consent display types
+   * @enum {ConsentDisplayTypesEnum}
+   * @readonly
+   */
+  static ConsentDisplayTypes = {
+    DO_NOT_SHOW: 1,
+    TRANSPARENT: 2,
+    OPTIN_OR_OUT: 3,
+    ALLOW_OR_DENY: 4
+  }
+
+  /**
+   * Enumeration of different possible consent types
+   * @enum {ConsentTypesEnum}
+   * @readonly
+   */
+  static ConsentTypes = {
+    ALLOW: 1,
+    DENY: 2,
+    OPTIN: 3,
+    OPTOUT: 4,
+    TRANSPARENT: 5
+  }
+
   /**
    * Create a new {@link Privacy} object.
    *
@@ -190,6 +216,7 @@ class Privacy {
           if (status == null) {
             status = 'approved';
           } else if (status == 'denied') {
+            // mix of approved and not approved
             status = 'multistatus';
           }
         } else {
@@ -212,6 +239,7 @@ class Privacy {
       }
 
       if (status == null) {
+        // final fallback. shouldn't happen
         status = 'denied';
       }
 
@@ -222,7 +250,7 @@ class Privacy {
     } catch (error) {
       const jsonResp = {status: 'error'};
       if (error.response.data) {
-        jsonResp.detail = error.response.data;
+        jsonResp.error = error.response.data;
         debug(`[${methodName}]`, 'error data:', error.response.data);
       } else {
         debug(`[${methodName}]`, 'error:', error);
@@ -301,7 +329,7 @@ class Privacy {
     } catch (error) {
       const jsonResp = {status: 'error'};
       if (error.response.data) {
-        jsonResp.detail = error.response.data;
+        jsonResp.error = error.response.data;
         debug(`[${methodName}]`, 'error data:', error.response.data);
       } else {
         debug(`[${methodName}]`, 'error:', error);
@@ -334,7 +362,7 @@ class Privacy {
     } catch (error) {
       const jsonResp = {status: 'error'};
       if (error.response &amp;&amp; error.response.data) {
-        jsonResp.detail = error.response.data;
+        jsonResp.error = error.response.data;
         debug(`[${methodName}]`, 'error data:', error.response.data);
       } else {
         debug(`[${methodName}]`, 'error:', error);
@@ -384,7 +412,7 @@ class Privacy {
       debug(`[${methodName}]`, 'error:', error);
       const jsonResp = {status: 'deny'};
       if (error.response.data) {
-        jsonResp.detail = error.response.data;
+        jsonResp.error = error.response.data;
       }
       return jsonResp;
     }

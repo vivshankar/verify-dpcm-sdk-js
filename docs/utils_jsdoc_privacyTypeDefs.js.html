@@ -77,7 +77,7 @@
  * &lt;br>&lt;code>denied&lt;/code> - approval is denied for all items
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
  * @property {Assessment} assessment The assessment details
- * @property {VerifyError} detail The error details if the status is "error"
+ * @property {VerifyError} error The error details if the status is "error"
  */
 
 /**
@@ -103,12 +103,7 @@
  * &lt;br>&lt;code>2&lt;/code> - Expired
  * &lt;br>&lt;code>3&lt;/code> - Inactive
  * &lt;br>&lt;code>8&lt;/code> - New consent required
- * @property {number} state This is the consent type provided by the user and can be one of -
- * &lt;br>&lt;code>1&lt;/code> - Allow: Usual consent that is not governed by any regulation
- * &lt;br>&lt;code>2&lt;/code> - Deny: Usual consent that is not governed by any regulation
- * &lt;br>&lt;code>3&lt;/code> - Opt in: Consent type required based on the assessment
- * &lt;br>&lt;code>4&lt;/code> - Opt out: Consent type required based on the assessment
- * &lt;br>&lt;code>5&lt;/code> - Transparent: No explicit user consent
+ * @property {ConsentTypesEnum} state This is the consent type provided by the user
  * @property {string} geoIP This is the IP address where the user consents
  * @property {Array} customAttributes This is a list of optional attributes. Object type
  * within the array is &lt;code>{ "key": "somekey", "value": "somevalue" }&lt;/code> 
@@ -131,11 +126,9 @@
  * user consent. This applies if no explicit start and end time is provided.
  * @property {boolean} assentUIDefault Indicates if the consent prompt should 
  * default the selection to "accepted"
- * @property {boolean} showPurpose Indicates if the purpose of use should be shown
- * @property {boolean} isTransparent Indicates if the user should be allowed to decline consent
- * and still be allowed to continue.
- * @property {boolean} isOptInOrOut Indicates that the type of consent to be collected is 
- * opt-in/out vs allow/deny. This doesn't apply if isTransparent is set to true.
+ * @property {ConsentDisplayTypesEnum} consentType Indicates the type of consent that needs to be
+ * collected and stored. If the value is &lt;code>ConsentDisplayTypes.DO_NOT_SHOW&lt;code>, do not
+ * show a consent request to the user.
  * @property {boolean} termsOfUseRef The terms of use if this record references a EULA.
  * @property {string} status The current status of consent. This can be one of -
  * &lt;br>&lt;code>NONE&lt;/code> - No consent
@@ -163,7 +156,7 @@
  * &lt;br>&lt;code>done&lt;/code> - the metadata is retrieved
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
  * @property {Metadata} metadata The metadata for rendering a consent page
- * @property {VerifyError} detail The error details if the status is "error"
+ * @property {VerifyError} error The error details if the status is "error"
  */
 
 /**
@@ -174,7 +167,7 @@
  * &lt;br>&lt;code>done&lt;/code> - the consents are retrieved
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
  * @property {Consent[]} consents The list of consents
- * @property {VerifyError} detail The error details if the status is "error"
+ * @property {VerifyError} error The error details if the status is "error"
  */
 
 /**
@@ -191,12 +184,7 @@
  * @property {string} attributeValue The attribute value for the attribute.
  * This is typically used when the user has more than one value for the attribute
  * and is consenting to a specific value.
- * @property {number} state This is the consent type provided by the user and can be one of -
- * &lt;br>&lt;code>1&lt;/code> - Allow: Usual consent that is not governed by any regulation
- * &lt;br>&lt;code>2&lt;/code> - Deny: Usual consent that is not governed by any regulation
- * &lt;br>&lt;code>3&lt;/code> - Opt in: Consent type required based on the assessment
- * &lt;br>&lt;code>4&lt;/code> - Opt out: Consent type required based on the assessment
- * &lt;br>&lt;code>5&lt;/code> - Transparent: No explicit user consent
+ * @property {ConsentTypesEnum} state This is the consent type provided by the user and can be one of -
  */
 
 /**
@@ -219,7 +207,33 @@
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
  * @property {ConsentOpResult[]} results The results of consent operation. 
  * This should be consulted when the status is &lt;code>fail&lt;/code>
- * @property {VerifyError} detail The error details if the status is "error"
+ * @property {VerifyError} error The error details if the status is "error"
+ */
+
+/**
+ * Enumeration of different possible consent display types
+ * @typedef {number} ConsentDisplayTypesEnum
+ * @property {number} DO_NOT_SHOW No consent needs to be collected or recorded and do not
+ * show the user the request.
+ * @property {number} TRANSPARENT User is shown the consent record but cannot choose to deny.
+ * Set &lt;code>ConsentTypes.TRANSPARENT&lt;/code> as the consent state.
+ * @property {number} OPTIN_OR_OUT User has to opt-in or opt-out. If the user approves of
+ * the consent request, use &lt;code>ConsentTypes.OPTIN&lt;/code>. If the user denies, use
+ * &lt;code>ConsentTypes.OPTOUT&lt;/code>.
+ * @property {number} ALLOW_OR_DENY User has to allow or deny. If the user approves of
+ * the consent request, use &lt;code>ConsentTypes.ALLOW&lt;/code>. If the user denies, use
+ * &lt;code>ConsentTypes.DENY&lt;/code>.
+ */
+
+/**
+ * Enumeration of different possible consent types
+ * @typedef {number} ConsentTypesEnum
+ * @property {number} ALLOW Usual consent that is not governed by any regulation
+ * @property {number} DENY Usual consent that is not governed by any regulation
+ * @property {number} OPTIN Opt-in required based on the assessment
+ * @property {number} OPTOUT Opt-out required based on the assessment
+ * @property {number} TRANSPARENT Show the request but the user cannot deny the
+ * request. If they continue past the consent page, the consent is recorded.
  */</code></pre>
         </article>
     </section>
