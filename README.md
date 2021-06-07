@@ -32,7 +32,7 @@ let items = [
     }
 ];
 
-doAssess = (req, res) => {
+doAssess = async (req, res) => {
   // assess if the item can be used
   let decision = await privacy.assess(items);
   if (decision.status == "consent") {
@@ -43,7 +43,7 @@ doAssess = (req, res) => {
   // handle other cases
 }
 
-storeConsents = (req, res) => {
+storeConsents = async (req, res) => {
   // assuming the request.body is a JSON array of 
   // consent records that need to be stored
   let r = await privacy.storeConsents(req.body);
