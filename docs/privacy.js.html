@@ -124,7 +124,9 @@ class Privacy {
    * selected for the purpose.
    * @param {string} items.attributeId The attribute ID on Verify. This must be
    * configured as one of the attributes for the purpose. This may be optional
-   * if no attributes are configured for the purpose.
+   * if no attributes are configured for the purpose. If this is empty and the
+   * purpose has associated attributes, all attributes are assessed and the
+   * decision is included in the result array.
    * @param {string} items.attributeValue The attribute value for the attribute.
    * This is typically used when the user has more than one value for the
    * attribute. This is optional.

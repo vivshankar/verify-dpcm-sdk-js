@@ -45,6 +45,8 @@
             <pre class="prettyprint source linenums"><code>/**
  * The assessment decision object for a specific request item
  * @typedef {Object} AssessmentDecision
+ * @property {string} attributeId The attribute identifier is only included
+ * if the request doesn't specify an attribute to be assessed.
  * @property {boolean} approved Indicates if the request has been approved
  * @property {boolean} requiresConsent Indicates if user consent is required.
  * This does not imply that an existing consent is positive if this value
@@ -63,8 +65,10 @@
  * for the purpose and optionally the attribute.
  * @property {string} attributeId The attribute ID on Verify. This is one of the
  * attributes for the purpose.
- * @property {AssessmentDecision} result The result object that contains the
- * decision.
+ * @property {AssessmentDecision[]} result The assessment decision objects. This
+ * might contain more than one object if the request does not include a
+ * specific attribute. In this case, the result contains the corresponding
+ * &lt;code>attributeId&lt;/code>.
  */
 
 /**

@@ -134,7 +134,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line12">line 12</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
@@ -276,7 +276,7 @@ attributes for the purpose.</p></td>
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#AssessmentDecision">AssessmentDecision</a></span>
+<span class="param-type">Array.&lt;<a href="global.html#AssessmentDecision">AssessmentDecision</a>></span>
 
 
             
@@ -286,8 +286,10 @@ attributes for the purpose.</p></td>
 
             
 
-            <td class="description last"><p>The result object that contains the
-decision.</p></td>
+            <td class="description last"><p>The assessment decision objects. This
+might contain more than one object if the request does not include a
+specific attribute. In this case, the result contains the corresponding
+<code>attributeId</code>.</p></td>
         </tr>
 
     
@@ -392,6 +394,30 @@ decision.</p></td>
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>attributeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The attribute identifier is only included
+if the request doesn't specify an attribute to be assessed.</p></td>
+        </tr>
+
     
 
         <tr>
@@ -507,7 +533,7 @@ of the denial</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line41">line 41</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line45">line 45</a>
     </li></ul></dd>
     
 
@@ -879,7 +905,7 @@ Object type within the array is
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line180">line 180</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line184">line 184</a>
     </li></ul></dd>
     
 
@@ -1080,7 +1106,7 @@ user denies, use <code>ConsentTypes.DENY</code>.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line157">line 157</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line161">line 161</a>
     </li></ul></dd>
     
 
@@ -1252,7 +1278,7 @@ user denies, use <code>ConsentTypes.DENY</code>.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line139">line 139</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line143">line 143</a>
     </li></ul></dd>
     
 
@@ -1499,7 +1525,7 @@ user.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line196">line 196</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line200">line 200</a>
     </li></ul></dd>
     
 
@@ -1717,7 +1743,7 @@ request. If they continue past the consent page, the consent is recorded.</p></t
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line108">line 108</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line112">line 112</a>
     </li></ul></dd>
     
 
@@ -1867,7 +1893,7 @@ to the default purpose-aware attribute category</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line74">line 74</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line78">line 78</a>
     </li></ul></dd>
     
 
@@ -2410,7 +2436,7 @@ be active.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line26">line 26</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -2588,7 +2614,7 @@ or policy rule <br><code>denied</code> - approval is denied for all items
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line128">line 128</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line132">line 132</a>
     </li></ul></dd>
     
 
@@ -2762,7 +2788,7 @@ the data was received or not.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line117">line 117</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line121">line 121</a>
     </li></ul></dd>
     
 
@@ -2936,7 +2962,7 @@ on whether the data was received or not.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line166">line 166</a>
+        <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line170">line 170</a>
     </li></ul></dd>
     
 
