@@ -179,39 +179,7 @@ class Privacy {
         };
       }
 
-      let status = null;
-      for (const ia of assessment) {
-        ia.requiresConsent = false;
-        if (!ia.result) {
-          continue;
-        }
-
-        if (ia.result[0].approved) {
-          if (status == null) {
-            status = 'approved';
-          } else if (status == 'denied') {
-            // mix of approved and not approved
-            status = 'multistatus';
-          }
-        } else {
-          // User has already opted out or denied consent.
-          // Rule decision is deny.
-          // The input application {{appID}} to purpose mapping {{purpose}}
-          // is not valid.
-          if (!['CSIBT0040I', 'CSIBT0041I', 'CSIBT0060I', 'CSIBT0016E']
-              .includes(ia.result[0].reason.messageId)) {
-            // at least one item requires consent
-            status = 'consent';
-            ia.requiresConsent = true;
-          } else if (status == 'approved') {
-            // mix of approved and not approved
-            status = 'multistatus';
-          } else if (status == null) {
-            status = 'denied';
-          }
-        }
-      }
-
+      let status = await service.processAssessment(assessment);
       if (status == null) {
         // final fallback. shouldn't happen
         status = 'denied';
