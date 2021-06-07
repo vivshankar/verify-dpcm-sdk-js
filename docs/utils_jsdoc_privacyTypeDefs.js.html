@@ -46,7 +46,8 @@
  * The assessment decision object for a specific request item
  * @typedef {Object} AssessmentDecision
  * @property {boolean} approved Indicates if the request has been approved
- * @property {VerifyError} reason If "approved" is false, the details of the denial
+ * @property {VerifyError} reason If "approved" is false, the details
+ * of the denial
  */
 
 /**
@@ -54,27 +55,28 @@
  * @typedef {Object} Assessment
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
- * @property {string} accessTypeId The access type ID representing the 
+ * @property {string} accessTypeId The access type ID representing the
  * available access types on Verify. This is one of the access types configured
  * for the purpose and optionally the attribute.
- * @property {string} attributeId The attribute ID on Verify. This is one of the 
+ * @property {string} attributeId The attribute ID on Verify. This is one of the
  * attributes for the purpose.
- * @property {boolean} requiresConsent Indicates if user consent is required. This
- * does not imply that an existing consent is positive if requiresConsent is set to
- * false.
- * @property {AssessmentDecision} result The result object that contains the decision.
+ * @property {boolean} requiresConsent Indicates if user consent is required.
+ * This does not imply that an existing consent is positive if requiresConsent
+ * is set to false.
+ * @property {AssessmentDecision} result The result object that contains the
+ * decision.
  */
 
 /**
  * The assessment response object
  * @typedef {Object} WrappedAssessment
- * @property {string} status The overall assessment status is computed based on the contents
- * of the assessment.
+ * @property {string} status The overall assessment status is computed based on
+ * the contents of the assessment.
  * &lt;br>&lt;code>approved&lt;/code> - all items are approved
  * &lt;br>&lt;code>consent&lt;/code> - some or all items require consent
- * &lt;br>&lt;code>multistatus&lt;/code> - none of the items require consent but some items are 
- * approved and others are denied because of user action (opt-out) or policy rule
- * &lt;br>&lt;code>denied&lt;/code> - approval is denied for all items
+ * &lt;br>&lt;code>multistatus&lt;/code> - none of the items require consent but some
+ * items are approved and others are denied because of user action (opt-out)
+ * or policy rule &lt;br>&lt;code>denied&lt;/code> - approval is denied for all items
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
  * @property {Assessment} assessment The assessment details
  * @property {VerifyError} error The error details if the status is "error"
@@ -85,28 +87,32 @@
  * @typedef {Object} Consent
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
- * @property {string} accessTypeId The access type ID representing the 
+ * @property {string} accessTypeId The access type ID representing the
  * available access types on Verify. This is one of the access types configured
  * for the purpose and optionally the attribute.
- * @property {string} attributeId The attribute ID on Verify. This is one of the 
+ * @property {string} attributeId The attribute ID on Verify. This is one of the
  * attributes for the purpose.
  * @property {string} attributeValue The attribute value for the attribute.
- * This is typically used when the user has more than one value for the attribute
- * and is consenting to a specific value.
- * @property {number} startTime The time since Epoch that indicates when the consent
- * becomes active.
- * @property {number} endTime The time since Epoch that indicates when the consent
- * elapses.
- * @property {boolean} isGlobal Indicates if the consent applies to all applications
- * @property {number} status This is the status of the consent and can be one of -
+ * This is typically used when the user has more than one value for the
+ * attribute and is consenting to a specific value.
+ * @property {number} startTime The time since Epoch that indicates when the
+ * consent becomes active.
+ * @property {number} endTime The time since Epoch that indicates when the
+ * consent elapses.
+ * @property {boolean} isGlobal Indicates if the consent applies to all
+ * applications
+ * @property {number} status This is the status of the consent and can be
+ * one of -
  * &lt;br>&lt;code>1&lt;/code> - Active
  * &lt;br>&lt;code>2&lt;/code> - Expired
  * &lt;br>&lt;code>3&lt;/code> - Inactive
  * &lt;br>&lt;code>8&lt;/code> - New consent required
- * @property {ConsentTypesEnum} state This is the consent type provided by the user
+ * @property {ConsentTypesEnum} state This is the consent type provided by the
+ * user
  * @property {string} geoIP This is the IP address where the user consents
- * @property {Array} customAttributes This is a list of optional attributes. Object type
- * within the array is &lt;code>{ "key": "somekey", "value": "somevalue" }&lt;/code> 
+ * @property {Array} customAttributes This is a list of optional attributes.
+ * Object type within the array is
+ * &lt;code>{ "key": "somekey", "value": "somevalue" }&lt;/code>
  */
 
 /**
@@ -115,28 +121,32 @@
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
  * @property {string} purposeName The purpose or EULA name
- * @property {string} accessTypeId The access type ID representing the 
+ * @property {string} accessTypeId The access type ID representing the
  * available access types on Verify. This is one of the access types configured
  * for the purpose and optionally the attribute.
  * @property {string} accessType The access type name
- * @property {string} attributeId The attribute ID on Verify. This is one of the 
+ * @property {string} attributeId The attribute ID on Verify. This is one of the
  * attributes for the purpose.
  * @property {string} attributeName The attribute name
- * @property {number} defaultConsentDuration The default duration configured for the
- * user consent. This applies if no explicit start and end time is provided.
- * @property {boolean} assentUIDefault Indicates if the consent prompt should 
+ * @property {number} defaultConsentDuration The default duration configured for
+ * the user consent. This applies if no explicit start and end time is provided.
+ * @property {boolean} assentUIDefault Indicates if the consent prompt should
  * default the selection to "accepted"
- * @property {ConsentDisplayTypesEnum} consentType Indicates the type of consent that needs to be
- * collected and stored. If the value is &lt;code>ConsentDisplayTypes.DO_NOT_SHOW&lt;code>, do not
- * show a consent request to the user.
- * @property {boolean} termsOfUseRef The terms of use if this record references a EULA.
+ * @property {ConsentDisplayTypesEnum} consentType Indicates the type of consent
+ * that needs to be collected and stored. If the value is
+ * &lt;code>ConsentDisplayTypes.DO_NOT_SHOW&lt;code>, do not show a consent request
+ * to the user.
+ * @property {boolean} termsOfUseRef The terms of use if this record references
+ * a EULA.
  * @property {string} status The current status of consent. This can be one of -
  * &lt;br>&lt;code>NONE&lt;/code> - No consent
- * &lt;br>&lt;code>ACTIVE&lt;/code> - An active consent record exists. However, the consent may
- * not translate to "yes".
- * &lt;br>&lt;code>EXPIRED&lt;/code> - A user consent record exists but it is no longer valid. This
- * may be due to a new privacy rule or a change in configuration or the consent has lapsed.
- * @property {Consent} consent The user consent record that may or may not be active.
+ * &lt;br>&lt;code>ACTIVE&lt;/code> - An active consent record exists. However, the
+ * consent may not translate to "yes".
+ * &lt;br>&lt;code>EXPIRED&lt;/code> - A user consent record exists but it is no longer
+ * valid. This may be due to a new privacy rule or a change in configuration or
+ * the consent has lapsed.
+ * @property {Consent} consent The user consent record that may or may not
+ * be active.
  */
 
 /**
@@ -151,8 +161,8 @@
 /**
  * The consent metadata response object
  * @typedef {Object} WrappedMetadata
- * @property {string} status The overall metadata status is computed based on whether
- * the data was received or not.
+ * @property {string} status The overall metadata status is computed based
+ * on whether the data was received or not.
  * &lt;br>&lt;code>done&lt;/code> - the metadata is retrieved
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
  * @property {Metadata} metadata The metadata for rendering a consent page
@@ -176,22 +186,23 @@
  * @property {string} id The consent record identifier
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
- * @property {string} accessTypeId The access type ID representing the 
+ * @property {string} accessTypeId The access type ID representing the
  * available access types on Verify. This is one of the access types configured
  * for the purpose and optionally the attribute.
- * @property {string} attributeId The attribute ID on Verify. This is one of the 
+ * @property {string} attributeId The attribute ID on Verify. This is one of the
  * attributes for the purpose.
  * @property {string} attributeValue The attribute value for the attribute.
- * This is typically used when the user has more than one value for the attribute
- * and is consenting to a specific value.
- * @property {ConsentTypesEnum} state This is the consent type provided by the user and can be one of -
+ * This is typically used when the user has more than one value for the
+ * attribute and is consenting to a specific value.
+ * @property {ConsentTypesEnum} state This is the consent type provided by the
+ * user.
  */
 
 /**
  * The consent operation result
  * @typedef {Object} ConsentOpResult
- * @property {string} result The result of the operation can be &lt;code>success&lt;/code>
- * or &lt;code>failure&lt;/code>
+ * @property {string} result The result of the operation can be
+ * &lt;code>success&lt;/code> or &lt;code>failure&lt;/code>
  * @property {ConsentOpResultValue} value The consent storage request record
  * @property {string} error The error if the result is &lt;code>failure&lt;code>
  */
@@ -202,10 +213,10 @@
  * @property {string} status The overall status is computed based on whether
  * the data was received or not.
  * &lt;br>&lt;code>success&lt;/code> - the consents have been saved successfully
- * &lt;br>&lt;code>fail&lt;/code> - some or all consents could not be saved. 
+ * &lt;br>&lt;code>fail&lt;/code> - some or all consents could not be saved.
  * Check &lt;code>results&lt;/code> for the reason
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
- * @property {ConsentOpResult[]} results The results of consent operation. 
+ * @property {ConsentOpResult[]} results The results of consent operation.
  * This should be consulted when the status is &lt;code>fail&lt;/code>
  * @property {VerifyError} error The error details if the status is "error"
  */
@@ -213,16 +224,17 @@
 /**
  * Enumeration of different possible consent display types
  * @typedef {number} ConsentDisplayTypesEnum
- * @property {number} DO_NOT_SHOW No consent needs to be collected or recorded and do not
- * show the user the request.
- * @property {number} TRANSPARENT User is shown the consent record but cannot choose to deny.
- * Set &lt;code>ConsentTypes.TRANSPARENT&lt;/code> as the consent state.
- * @property {number} OPTIN_OR_OUT User has to opt-in or opt-out. If the user approves of
- * the consent request, use &lt;code>ConsentTypes.OPTIN&lt;/code>. If the user denies, use
- * &lt;code>ConsentTypes.OPTOUT&lt;/code>.
- * @property {number} ALLOW_OR_DENY User has to allow or deny. If the user approves of
- * the consent request, use &lt;code>ConsentTypes.ALLOW&lt;/code>. If the user denies, use
- * &lt;code>ConsentTypes.DENY&lt;/code>.
+ * @property {number} DO_NOT_SHOW No consent needs to be collected or recorded
+ * and do not show the user the request.
+ * @property {number} TRANSPARENT User is shown the consent record but cannot
+ * choose to deny. Set &lt;code>ConsentTypes.TRANSPARENT&lt;/code> as the consent
+ * state.
+ * @property {number} OPTIN_OR_OUT User has to opt-in or opt-out. If the user
+ * approves of the consent request, use &lt;code>ConsentTypes.OPTIN&lt;/code>. If the
+ * user denies, use &lt;code>ConsentTypes.OPTOUT&lt;/code>.
+ * @property {number} ALLOW_OR_DENY User has to allow or deny. If the user
+ * approves of the consent request, use &lt;code>ConsentTypes.ALLOW&lt;/code>. If the
+ * user denies, use &lt;code>ConsentTypes.DENY&lt;/code>.
  */
 
 /**
@@ -234,7 +246,8 @@
  * @property {number} OPTOUT Opt-out required based on the assessment
  * @property {number} TRANSPARENT Show the request but the user cannot deny the
  * request. If they continue past the consent page, the consent is recorded.
- */</code></pre>
+ */
+</code></pre>
         </article>
     </section>
 

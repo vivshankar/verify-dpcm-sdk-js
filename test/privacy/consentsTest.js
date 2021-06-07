@@ -1,70 +1,72 @@
 const assert = require('assert');
-const Env = require('../utils/config')
-const config = Env.Config, auth = Env.Auth, context = Env.Context
-const Privacy = require('../../lib/privacy')
+const Env = require('../utils/config');
+const config = Env.Config; const auth = Env.Auth; const context = Env.Context;
+const Privacy = require('../../lib/privacy');
 
 describe('Privacy', () => {
+  before((done) => {
+    if (!config.tenantUrl || config.tenantUrl == '') {
+      return done('TENANT_URL is missing from the env');
+    }
 
-    before((done) => {
-        if (!config.tenantUrl || config.tenantUrl == '') {
-            return done('TENANT_URL is missing from the env')
-        }
+    if (!auth.accessToken || auth.accessToken == '') {
+      return done('ACCESS_TOKEN is missing from the env');
+    }
 
-        if (!auth.accessToken || auth.accessToken == '') {
-            return done('ACCESS_TOKEN is missing from the env')
-        }
+    return done();
+  });
 
-        return done();
+  describe('#userConsents', () => {
+    it('create user consents', async () => {
+      const client = new Privacy(config, auth, context);
+
+      try {
+        const result = await client.storeConsents([
+          {
+            'purposeId': 'marketing',
+            'attributeId': 'mobile_number',
+            'state': 3,
+          },
+        ]);
+        assert.strictEqual(result.status, 'success',
+            `Result status is unexpected: ${result.status}`);
+      } catch (error) {
+        assert.fail(`Error thrown:\n${error}`);
+      }
     });
 
-    describe('#userConsents', () => {
-        it('create user consents', async () => {
-            let client = new Privacy(config, auth, context)
+    it('get user consents', async () => {
+      const client = new Privacy(config, auth, context);
 
-            try {
-                let result = await client.storeConsents([
-                    {
-                        "purposeId": "marketing",
-                        "attributeId": "mobile_number",
-                        "state": 3
-                    },
-                ])
-                assert.strictEqual(result.status, "success", `Result status is unexpected: ${result.status}`);
-            } catch (error) {
-                assert.fail(`Error thrown:\n${error}`);
-            }
-        });
+      try {
+        const result = await client.getUserConsents();
+        assert.strictEqual(result.status, 'done',
+            `Result status is unexpected: ${result.status}`);
+      } catch (error) {
+        assert.fail(`Error thrown:\n${error}`);
+      }
+    });
 
-        it('get user consents', async () => {
-            let client = new Privacy(config, auth, context)
+    it('get error because of invalid purpose', async () => {
+      const client = new Privacy(config, auth, context);
 
-            try {
-                let result = await client.getUserConsents();
-                assert.strictEqual(result.status, "done", `Result status is unexpected: ${result.status}`);
-            } catch (error) {
-                assert.fail(`Error thrown:\n${error}`);
-            }
-        });
+      try {
+        const result = await client.getConsentMetadata([
+          {
+            'purposeId': 'marketing',
+            'attributeId': '11', // mobile_number
+            'accessTypeId': 'default',
+          },
+          {
+            'purposeId': '98b56762-398b-4116-94b5-125b5ca0d831',
+          },
+        ]);
 
-        it('get error because of invalid purpose', async () => {
-            let client = new Privacy(config, auth, context)
-
-            try {
-                let result = await client.getConsentMetadata([
-                    {
-                        "purposeId": "marketing",
-                        "attributeId": "11", // mobile_number
-                        "accessTypeId": "default"
-                    },
-                    {
-                        "purposeId": "98b56762-398b-4116-94b5-125b5ca0d831",
-                    }
-                ])
-                
-                assert.strictEqual(result.status, "error", `Result status is not unexpected: ${result.status}`)
-            } catch (error) {
-                assert.fail(`Error thrown:\n${error}`);
-            }
-        });
-    })
-})
+        assert.strictEqual(result.status, 'error',
+            `Result status is not unexpected: ${result.status}`);
+      } catch (error) {
+        assert.fail(`Error thrown:\n${error}`);
+      }
+    });
+  });
+});

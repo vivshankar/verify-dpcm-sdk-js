@@ -10,8 +10,8 @@
     "olddocs": "rm -r docs 2>/dev/null; jsdoc -r lib -d docs -t node_modules/minami --verbose",
     "docs": "rm -r docs 2>/dev/null; jsdoc -c ./.jsdoc.json --verbose",
     "check-env": "node -e 'console.log(process.env)' | grep npm",
-    "codecheck": "eslint **/*.js",
-    "codecheckfix": "eslint --fix **/*.js"
+    "codecheck": "eslint \"**/*.js\"",
+    "codecheckfix": "eslint --fix \"**/*.js\""
   },
   "keywords": [],
   "author": "Vivek Shankar <viv.shankar@gmail.com>",
