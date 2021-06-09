@@ -60,7 +60,7 @@
  * @typedef {Object} Assessment
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
- * @property {string} accessTypeId The access type ID representing the
+ * @property {string} accessTypeId The access type ID representing one of the
  * available access types on Verify. This is one of the access types configured
  * for the purpose and optionally the attribute.
  * @property {string} attributeId The attribute ID on Verify. This is one of the
@@ -82,7 +82,8 @@
  * items are approved and others are denied because of user action (opt-out)
  * or policy rule &lt;br>&lt;code>denied&lt;/code> - approval is denied for all items
  * &lt;br>&lt;code>error&lt;/code> - invalid request or system error
- * @property {Assessment} assessment The assessment details
+ * @property {Assessment[]} assessment The assessment details for each requested
+ * item
  * @property {VerifyError} error The error details if the status is "error"
  */
 
@@ -91,7 +92,7 @@
  * @typedef {Object} Consent
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
- * @property {string} accessTypeId The access type ID representing the
+ * @property {string} accessTypeId The access type ID representing one of the
  * available access types on Verify. This is one of the access types configured
  * for the purpose and optionally the attribute.
  * @property {string} attributeId The attribute ID on Verify. This is one of the
@@ -99,10 +100,10 @@
  * @property {string} attributeValue The attribute value for the attribute.
  * This is typically used when the user has more than one value for the
  * attribute and is consenting to a specific value.
- * @property {number} startTime The time since Epoch that indicates when the
- * consent becomes active.
- * @property {number} endTime The time since Epoch that indicates when the
- * consent elapses.
+ * @property {number} startTime The time since Epoch (in seconds) that
+ * indicates when the consent becomes active.
+ * @property {number} endTime The time since Epoch (in seconds) that indicates
+ * when the consent elapses.
  * @property {boolean} isGlobal Indicates if the consent applies to all
  * applications
  * @property {number} status This is the status of the consent and can be
@@ -116,7 +117,7 @@
  * @property {string} geoIP This is the IP address where the user consents
  * @property {Array} customAttributes This is a list of optional attributes.
  * Object type within the array is
- * &lt;code>{ "key": "somekey", "value": "somevalue" }&lt;/code>
+ * &lt;code>{ "name": "somekey", "value": "somevalue" }&lt;/code>
  */
 
 /**
@@ -125,7 +126,7 @@
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
  * @property {string} purposeName The purpose or EULA name
- * @property {string} accessTypeId The access type ID representing the
+ * @property {string} accessTypeId The access type ID representing one of the
  * available access types on Verify. This is one of the access types configured
  * for the purpose and optionally the attribute.
  * @property {string} accessType The access type name
@@ -140,7 +141,7 @@
  * that needs to be collected and stored. If the value is
  * &lt;code>ConsentDisplayTypes.DO_NOT_SHOW&lt;code>, do not show a consent request
  * to the user.
- * @property {boolean} termsOfUseRef The terms of use if this record references
+ * @property {string} termsOfUseRef The terms of use if this record references
  * a EULA.
  * @property {string} status The current status of consent. This can be one of -
  * &lt;br>&lt;code>NONE&lt;/code> - No consent
@@ -190,7 +191,7 @@
  * @property {string} id The consent record identifier
  * @property {string} purposeId The purpose or EULA ID representing the privacy
  * purpose or EULA configured on Verify.
- * @property {string} accessTypeId The access type ID representing the
+ * @property {string} accessTypeId The access type ID representing one of the
  * available access types on Verify. This is one of the access types configured
  * for the purpose and optionally the attribute.
  * @property {string} attributeId The attribute ID on Verify. This is one of the
