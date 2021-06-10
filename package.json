@@ -6,6 +6,7 @@
   "scripts": {
     "testdebug": "DEBUG=verify:* mocha test/service/*.js test/privacy/*.js --timeout 5000",
     "test": "mocha test/service/*.js test/privacy/*.js --timeout 5000",
+    "testwithfiles": "mocha --timeout 5000",
     "clean": "rm -r node_modules package-lock.json",
     "docs": "rm -r docs 2>/dev/null; jsdoc -c ./.jsdoc.json --verbose",
     "check-env": "node -e 'console.log(process.env)' | grep npm",
@@ -21,9 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
-    "debug": "^4.3.1",
-    "dotenv": "^10.0.0",
-    "jsdoc-fresh": "^1.1.0"
+    "debug": "^4.3.1"
   },
   "devDependencies": {
     "docdash": "^1.2.0",
@@ -31,6 +30,8 @@
     "eslint-config-google": "^0.14.0",
     "jsdoc": "^3.6.6",
     "minami": "^1.2.3",
-    "mocha": "^8.3.0"
+    "mocha": "^8.3.0",
+    "jsdoc-fresh": "^1.1.0",
+    "dotenv": "^10.0.0"
   }
 }

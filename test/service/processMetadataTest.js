@@ -20,11 +20,12 @@ describe('DPCMService', () => {
   describe('#flattenDSPResponse', () => {
     it('should flatten correctly', () => {
       const service = new DPCMService(auth, config.tenantUrl, context);
-      const itemSet = new Set();
-      itemSet.add('marketing/3.default');
-      itemSet.add('marketing/11.default');
-      itemSet.add('eula/.default');
-      itemSet.add('eula2/.default');
+      const itemFilter = {
+        'marketing/3.default': [''],
+        'marketing/11.default': [''],
+        'eula/.default': [''],
+        'eula2/.default': [''],
+      };
       const response = {
         'purposes': {
           'eula': {
@@ -187,9 +188,8 @@ describe('DPCMService', () => {
         },
       };
 
-      debug(`[processConsentMetadata] itemSet:
-          ${new Array(...itemSet).join(' ')}`);
-      service.processConsentMetadata(itemSet, response).then((result) => {
+      debug(`[processConsentMetadata] ${JSON.stringify(itemFilter)}`);
+      service.processConsentMetadata(itemFilter, response).then((result) => {
         debug(`[processConsentMetadata] result:\n${JSON.stringify(result)}`);
       }).catch((err) => {
         debug('Error=' + err);
