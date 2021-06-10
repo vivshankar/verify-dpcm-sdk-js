@@ -257,6 +257,9 @@ class Privacy {
    * @param {string} items.attributeId The attribute ID on Verify. This must be
    * configured as one of the attributes for the purpose. This may be optional
    * if no attributes are configured for the purpose. Wildcards are not allowed.
+   * @param {string} items.attributeValue The attribute value for the attribute.
+   * This is typically used when the user has more than one value for the
+   * attribute. This is optional.
    *
    * @return {Promise&lt;WrappedMetadata>} The status of the request
    * and any consent metadata
@@ -286,7 +289,7 @@ class Privacy {
     try {
       // retrieve the list of purposes
       const purposes = new Set();
-      const itemNameSet = new Set();
+      const itemFilter = {};
       for (const item of items) {
         purposes.add(item.purposeId);
 
@@ -294,9 +297,16 @@ class Privacy {
           item.accessTypeId = 'default';
         }
 
-        itemNameSet.add(item.purposeId + '/' +
+        const itemKey = item.purposeId + '/' +
             StringUtils.getOrDefault(item, 'attributeId', '') +
-            '.' + StringUtils.getOrDefault(item, 'accessTypeId', ''));
+            '.' + StringUtils.getOrDefault(item, 'accessTypeId', '');
+        const attrValue = StringUtils.getOrDefault(item, 'attributeValue', '');
+        if (!itemFilter.hasOwnProperty(itemKey)) {
+          // initialize
+          itemFilter[itemKey] = [attrValue];
+        } else {
+          itemFilter[itemKey].push(attrValue);
+        }
       }
 
       // get metadata
@@ -305,7 +315,7 @@ class Privacy {
 
       // filter and normalize
       const metadata = await service.processConsentMetadata(
-          itemNameSet, response);
+          itemFilter, response);
       debug(`[${methodName}]`, 'metadata:', JSON.stringify(metadata));
 
       return {status: 'done', metadata};

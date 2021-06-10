@@ -90,5 +90,19 @@ describe('Privacy', () => {
         assert.fail(`Error thrown:\n${error}`);
       }
     });
+
+    it('badeula', async () => {
+      const client = new Privacy(config, auth, context);
+
+      const result = await client.assess([
+        {
+          'purposeId': 'badeula',
+        },
+      ]);
+
+      debug(`result =\n${JSON.stringify(result)}`);
+      assert.strictEqual(result.status, 'denied',
+          `Result status is not error: ${JSON.stringify(result)}`);
+    });
   });
 });
