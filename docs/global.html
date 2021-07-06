@@ -285,6 +285,36 @@ attributes for the purpose.</p>
 
     <tr>
       
+        <td class="name"><code>attributeValue</code></td>
+      
+
+      <td class="type">
+        
+          
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+        
+      </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The attribute value provided in the
+request.</p>
+          </td>
+    </tr>
+
+  
+
+    <tr>
+      
         <td class="name"><code>result</code></td>
       
 
@@ -991,7 +1021,7 @@ Object type within the array is
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line46">line 46</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line48">line 48</a>
         </li>
       </ul>
     </dd>
@@ -1207,7 +1237,7 @@ user denies, use <code>ConsentTypes.DENY</code>.</p>
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line187">line 187</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line190">line 190</a>
         </li>
       </ul>
     </dd>
@@ -1388,7 +1418,7 @@ user denies, use <code>ConsentTypes.DENY</code>.</p>
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line164">line 164</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line167">line 167</a>
         </li>
       </ul>
     </dd>
@@ -1662,7 +1692,7 @@ user.</p>
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line146">line 146</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line149">line 149</a>
         </li>
       </ul>
     </dd>
@@ -1744,7 +1774,11 @@ user.</p>
         
 
         <td class="description last">
-          <p>Usual consent that is not governed by any regulation</p>
+          <p>Usual consent that is not governed by any
+regulation. This is the consent type expected if the user chose to
+approve the request and the consent display type returned by
+<code>getConsentMetadata</code> is
+<code>ConsentDisplayTypes.ALLOW_OR_DENY</code>.</p>
           </td>
     </tr>
 
@@ -1773,7 +1807,11 @@ user.</p>
         
 
         <td class="description last">
-          <p>Usual consent that is not governed by any regulation</p>
+          <p>Usual consent that is not governed by any regulation.
+This is the consent type expected if the user chose to not approve the
+request and the consent display type returned by
+<code>getConsentMetadata</code> is
+<code>ConsentDisplayTypes.ALLOW_OR_DENY</code>.</p>
           </td>
     </tr>
 
@@ -1802,7 +1840,11 @@ user.</p>
         
 
         <td class="description last">
-          <p>Opt-in required based on the assessment</p>
+          <p>Opt-in required based on the assessment.
+This is the consent type expected if the user chose to
+approve the request and the consent display type returned by
+<code>getConsentMetadata</code> is
+<code>ConsentDisplayTypes.OPTIN_OR_OUT</code>.</p>
           </td>
     </tr>
 
@@ -1831,7 +1873,11 @@ user.</p>
         
 
         <td class="description last">
-          <p>Opt-out required based on the assessment</p>
+          <p>Opt-out required based on the assessment. This is
+the consent type expected if the user chose to not approve the request
+and the consent display type returned by
+<code>getConsentMetadata</code> is
+<code>ConsentDisplayTypes.OPTIN_OR_OUT</code>.</p>
           </td>
     </tr>
 
@@ -1860,8 +1906,10 @@ user.</p>
         
 
         <td class="description last">
-          <p>Show the request but the user cannot deny the
-request. If they continue past the consent page, the consent is recorded.</p>
+          <p>User opted to implicitly consent. This is the
+consent type expected when the consent display type returned by
+<code>getConsentMetadata</code> is
+<code>ConsentDisplayTypes.TRANSPARENT</code>.</p>
           </td>
     </tr>
 
@@ -1901,7 +1949,7 @@ request. If they continue past the consent page, the consent is recorded.</p>
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line203">line 203</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line206">line 206</a>
         </li>
       </ul>
     </dd>
@@ -2054,7 +2102,7 @@ to the default purpose-aware attribute category</p>
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line115">line 115</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line118">line 118</a>
         </li>
       </ul>
     </dd>
@@ -2293,6 +2341,35 @@ attributes for the purpose.</p>
 
     <tr>
       
+        <td class="name"><code>attributeValue</code></td>
+      
+
+      <td class="type">
+        
+          
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+        
+      </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The attribute value in the consent record.</p>
+          </td>
+    </tr>
+
+  
+
+    <tr>
+      
         <td class="name"><code>defaultConsentDuration</code></td>
       
 
@@ -2514,7 +2591,7 @@ be active.</p>
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line79">line 79</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line81">line 81</a>
         </li>
       </ul>
     </dd>
@@ -2853,7 +2930,7 @@ item</p>
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line30">line 30</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line32">line 32</a>
         </li>
       </ul>
     </dd>
@@ -3036,7 +3113,7 @@ the data was received or not.
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line135">line 135</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line138">line 138</a>
         </li>
       </ul>
     </dd>
@@ -3219,7 +3296,7 @@ on whether the data was received or not.
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line124">line 124</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line127">line 127</a>
         </li>
       </ul>
     </dd>
@@ -3405,7 +3482,7 @@ This should be consulted when the status is <code>fail</code></p>
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line173">line 173</a>
+          <a href="utils_jsdoc_privacyTypeDefs.js.html">utils/jsdoc/privacyTypeDefs.js</a>, <a href="utils_jsdoc_privacyTypeDefs.js.html#line176">line 176</a>
         </li>
       </ul>
     </dd>

@@ -26,12 +26,12 @@
   },
   "devDependencies": {
     "docdash": "^1.2.0",
+    "dotenv": "^10.0.0",
     "eslint": "^7.27.0",
     "eslint-config-google": "^0.14.0",
     "jsdoc": "^3.6.6",
-    "minami": "^1.2.3",
-    "mocha": "^8.3.0",
     "jsdoc-fresh": "^1.1.0",
-    "dotenv": "^10.0.0"
+    "minami": "^1.2.3",
+    "mocha": "^8.3.0"
   }
 }

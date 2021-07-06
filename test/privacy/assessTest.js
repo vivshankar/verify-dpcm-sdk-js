@@ -1,20 +1,13 @@
 const assert = require('assert');
 const Env = require('../utils/config');
 const config = Env.Config; const auth = Env.Auth; const context = Env.Context;
+const checkConfig = Env.checkConfig;
 const Privacy = require('../../lib/privacy');
 const debug = require('debug')('verify:assessTest');
 
 describe('Privacy', () => {
-  before((done) => {
-    if (!config.tenantUrl || config.tenantUrl == '') {
-      return done('TENANT_URL is missing from the env');
-    }
-
-    if (!auth.accessToken || auth.accessToken == '') {
-      return done('ACCESS_TOKEN is missing from the env');
-    }
-
-    return done();
+  before(async () => {
+    await checkConfig();
   });
 
   describe('#assess', () => {

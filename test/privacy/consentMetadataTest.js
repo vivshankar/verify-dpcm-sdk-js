@@ -1,17 +1,12 @@
 const assert = require('assert');
 const Env = require('../utils/config');
 const config = Env.Config; const auth = Env.Auth; const context = Env.Context;
+const checkConfig = Env.checkConfig;
 const Privacy = require('../../lib/privacy');
 
 describe('Privacy', () => {
   before( async () => {
-    if (!config.tenantUrl || config.tenantUrl == '') {
-      throw new Error('TENANT_URL is missing from the env');
-    }
-
-    if (!auth.accessToken || auth.accessToken == '') {
-      throw new Error('ACCESS_TOKEN is missing from the env');
-    }
+    await checkConfig();
 
     // precreate some consents
     const client = new Privacy(config, auth, context);
