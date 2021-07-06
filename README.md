@@ -12,7 +12,7 @@ on this Github repository for feature requests and bugs.
 ---
 
 ```js
-const Privacy = require('verify-dpcm-sdk-js');
+const Privacy = require('verify-privacy-sdk-js');
 
 // tenant information and other global config
 const config = { tenantUrl: "https://abc.verify.ibm.com" };
@@ -74,7 +74,7 @@ storeConsents = async (req, res) => {
 Use [npm](https://github.com/npm/cli) to install the SDK:
 
 ```bash
-$ npm install https://github.com/vivshankar/verify-dpcm-sdk-js
+$ npm install https://github.com/vivshankar/verify-privacy-sdk-js
 ```
 
 ## Features
@@ -85,7 +85,7 @@ $ npm install https://github.com/vivshankar/verify-dpcm-sdk-js
 
 ## Documentation
 
-* [Library documentation](https://vivshankar.github.io/verify-dpcm-sdk-js/)
+* [Library documentation](https://vivshankar.github.io/verify-privacy-sdk-js/)
 * [Usage examples](https://github.com/vivshankar/verify-privacy-examples)
 
 ## Tests
