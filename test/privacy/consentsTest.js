@@ -3,6 +3,7 @@ const Env = require('../utils/config');
 const config = Env.Config; const auth = Env.Auth; const context = Env.Context;
 const checkConfig = Env.checkConfig;
 const Privacy = require('../../lib/privacy');
+const { stringify } = require('querystring');
 
 describe('Privacy', () => {
   before(async () => {
@@ -33,7 +34,7 @@ describe('Privacy', () => {
 
       try {
         const result = await client.getUserConsents();
-        assert.strictEqual(result.status, 'done',
+        assert(result.status == 'done',
             `Result status is unexpected: ${result.status}`);
       } catch (error) {
         assert.fail(`Error thrown:\n${error}`);
