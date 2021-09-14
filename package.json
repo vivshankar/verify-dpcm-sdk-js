@@ -11,7 +11,9 @@
     "docs": "rm -r docs 2>/dev/null; jsdoc -c ./.jsdoc.json --verbose",
     "check-env": "node -e 'console.log(process.env)' | grep npm",
     "codecheck": "eslint \"**/*.js\"",
-    "codecheckfix": "eslint --fix \"**/*.js\""
+    "codecheckfix": "eslint --fix \"**/*.js\"",
+    "coverage": "nyc mocha ./test/**/*.js --timeout 10000 --coverage",
+    "htmlreport": "nyc report --reporter=html"
   },
   "keywords": [],
   "author": "Vivek Shankar <viv.shankar@gmail.com>",
@@ -32,6 +34,7 @@
     "jsdoc": "^3.6.6",
     "jsdoc-fresh": "^1.1.0",
     "minami": "^1.2.3",
-    "mocha": "^8.3.0"
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0"
   }
 }
