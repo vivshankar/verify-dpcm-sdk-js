@@ -78,4 +78,42 @@ describe('Privacy', () => {
       }
     });
   });
+  describe('#error', () => {
+    describe('storeConsents', async () => {
+      it('should return an error for invalid input', async () => {
+        const client = new Privacy(config, auth, context);
+        const ret = await client.storeConsents({});
+        assert.strictEqual(ret.status, 'error');
+        assert.strictEqual(ret.error.messageId, 'INVALID_DATATYPE');
+      });
+    });
+    it('should return an error for invalid accesstoken', async () => {
+      const client = new Privacy(
+          config, {...auth, accessToken: 'someinvalidtoken'}, context,
+      );
+      const ret = await client.storeConsents([{}]);
+      assert.strictEqual(ret.status, 'deny');
+    });
+    it(`should return failure when an internal user
+     poses as an externalSubject`, async () => {
+      const client = new Privacy(
+          config, auth, {...context, isExternalSubject: true},
+      );
+      const ret = await client.storeConsents([{
+        'purposeId': 'marketing',
+        'attributeId': 'mobile_number',
+        'state': 3,
+      }]);
+      assert.strictEqual(ret.status, 'fail');
+    });
+    describe('getUserConsents', () => {
+      it('should return an error for invalid accesstoken', async () => {
+        const client = new Privacy(
+            config, {...auth, accessToken: 'someinvalidtoken'}, context,
+        );
+        const ret = await client.getUserConsents();
+        assert.strictEqual(ret.status, 'error');
+      });
+    });
+  });
 });

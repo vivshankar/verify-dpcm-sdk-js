@@ -136,5 +136,23 @@ describe('Privacy', () => {
             `Fail: ${JSON.stringify(record)}`);
       }
     });
+
+    describe('#error', () => {
+      it(`should fail to retrieve metadata if isExternalSubject
+      is specified incorrectly`, async () => {
+        const client = new Privacy(
+            config, auth, {...context, isExternalSubject: true},
+        );
+        const result = await client.getConsentMetadata([
+          {
+            'purposeId': 'marketing',
+            'attributeId': 'given_name',
+            'accessTypeId': 'default',
+          },
+        ]);
+        assert.strictEqual(result.status, 'error');
+        assert.strictEqual(result.error.messageId, 'CSIBT0004E');
+      });
+    });
   });
 });
